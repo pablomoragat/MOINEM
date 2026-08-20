@@ -8,6 +8,55 @@
     <title>MOINEM - Motor de Inteligencia Empresarial</title>
 
     <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Ajuste visual de encabezados principales por sección */
+        #atributos .strategic-header,
+        #casos-uso > .section-eyebrow,
+        #casos-uso > h2,
+        #casos-uso > .section-lead,
+        #insights > .section-eyebrow,
+        #insights > h2 {
+            text-align: right;
+        }
+
+        #atributos .strategic-header {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        #casos-uso > .section-eyebrow,
+        #casos-uso > h2,
+        #casos-uso > .section-lead,
+        #insights > .section-eyebrow,
+        #insights > h2 {
+            margin-left: auto;
+        }
+
+        #atributos .strategic-header h2,
+        #casos-uso > h2,
+        #insights > h2 {
+            font-size: clamp(38px, 4.1vw, 60px);
+            line-height: 1.08;
+        }
+
+        @media (max-width: 620px) {
+            #atributos .strategic-header,
+            #casos-uso > .section-eyebrow,
+            #casos-uso > h2,
+            #casos-uso > .section-lead,
+            #insights > .section-eyebrow,
+            #insights > h2 {
+                text-align: left;
+            }
+
+            #atributos .strategic-header h2,
+            #casos-uso > h2,
+            #insights > h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -497,7 +546,6 @@
                             <span class="platform-badge">
                                 Natural Language
                             </span>
-
                         </div>
 
                         <div class="platform-question">

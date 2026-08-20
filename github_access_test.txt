@@ -1,0 +1,3 @@
+MOINEM — prueba de acceso GitHub
+Fecha: 2026-08-20
+Esta archivo confirma que ChatGPT pudo escribir y publicar un cambio de prueba en el repositorio.

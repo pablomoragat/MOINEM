@@ -17,20 +17,17 @@
         #casos-uso > .section-lead,
         #insights > .section-eyebrow,
         #insights > h2 {
-            text-align: right;
+            text-align: left;
         }
 
-        #atributos .strategic-header {
-            margin-left: auto;
-            margin-right: 0;
-        }
-
+        #atributos .strategic-header,
         #casos-uso > .section-eyebrow,
         #casos-uso > h2,
         #casos-uso > .section-lead,
         #insights > .section-eyebrow,
         #insights > h2 {
-            margin-left: auto;
+            margin-left: 0;
+            margin-right: auto;
         }
 
         #atributos .strategic-header h2,
@@ -40,7 +37,62 @@
             line-height: 1.08;
         }
 
-        @media (max-width: 620px) {
+        /* Demostración: mismo estilo, etiqueta azul y título en mayúsculas */
+        .demo-video-title {
+            text-align: left;
+        }
+
+        .demo-video-title .section-eyebrow {
+            color: #2563eb;
+        }
+
+        .demo-video-title h3 {
+            text-transform: uppercase;
+        }
+
+        /* Contacto en dos columnas: identidad a la izquierda, texto y botones a la derecha */
+        .contact-section {
+            display: grid;
+            grid-template-columns: minmax(260px, 34%) minmax(0, 66%);
+            gap: 54px;
+            align-items: center;
+            text-align: left;
+        }
+
+        .contact-identity {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .contact-identity img {
+            width: 220px;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .contact-identity a {
+            text-decoration: none;
+            color: #0f172a;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .contact-copy .section-eyebrow,
+        .contact-copy h2,
+        .contact-copy > p {
+            text-align: left;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .contact-copy .contact-actions {
+            justify-content: flex-start;
+        }
+
+        @media (max-width: 760px) {
             #atributos .strategic-header,
             #casos-uso > .section-eyebrow,
             #casos-uso > h2,
@@ -54,6 +106,15 @@
             #casos-uso > h2,
             #insights > h2 {
                 font-size: 34px;
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .contact-identity img {
+                width: 180px;
             }
         }
     </style>
@@ -239,7 +300,6 @@
 
     <div class="strategic-flow">
 
-        <!-- ENTRADAS -->
         <div class="flow-column flow-inputs">
 
             <p class="flow-column-title">
@@ -248,36 +308,26 @@
 
             <article class="flow-card">
                 <h3>Datos empresariales</h3>
-                <p>
-                    Bases de datos internas y sistemas transaccionales.
-                </p>
+                <p>Bases de datos internas y sistemas transaccionales.</p>
             </article>
 
             <article class="flow-card">
                 <h3>Conocimiento del negocio</h3>
-                <p>
-                    Definiciones, políticas, catálogos y criterios empresariales.
-                </p>
+                <p>Definiciones, políticas, catálogos y criterios empresariales.</p>
             </article>
 
             <article class="flow-card">
                 <h3>Reglas de negocio</h3>
-                <p>
-                    Lógicas, validaciones y procesos definidos por la organización.
-                </p>
+                <p>Lógicas, validaciones y procesos definidos por la organización.</p>
             </article>
 
             <article class="flow-card">
                 <h3>Documentos y fuentes</h3>
-                <p>
-                    Informes, archivos y fuentes autorizadas.
-                </p>
+                <p>Informes, archivos y fuentes autorizadas.</p>
             </article>
 
         </div>
 
-
-        <!-- NUCLEO CENTRAL -->
         <div class="moinem-core-area">
 
             <svg class="flow-lines"
@@ -285,178 +335,68 @@
                  preserveAspectRatio="none"
                  aria-hidden="true">
 
-                <!-- Entradas: las líneas terminan antes del núcleo -->
                 <path id="in1" d="M0,85 C150,85 190,135 255,155" />
                 <path id="in2" d="M0,195 C145,195 190,210 255,220" />
                 <path id="in3" d="M0,305 C145,305 190,285 255,275" />
                 <path id="in4" d="M0,415 C150,415 190,365 255,345" />
-
-                <!-- Salidas: las líneas comienzan después del núcleo -->
                 <path id="out1" d="M445,150 C510,130 555,85 700,85" />
                 <path id="out2" d="M445,215 C515,205 560,195 700,195" />
                 <path id="out3" d="M445,275 C515,285 560,305 700,305" />
                 <path id="out4" d="M445,345 C510,365 555,415 700,415" />
 
-                <!-- Puntos animados: nunca atraviesan el área central -->
-                <circle class="moving-dot dot-1" r="6">
-                    <animateMotion dur="4.8s" repeatCount="indefinite">
-                        <mpath href="#in1"/>
-                    </animateMotion>
-                </circle>
-
-                <circle class="moving-dot dot-2" r="6">
-                    <animateMotion dur="5.2s" begin="0.6s" repeatCount="indefinite">
-                        <mpath href="#in2"/>
-                    </animateMotion>
-                </circle>
-
-                <circle class="moving-dot dot-3" r="6">
-                    <animateMotion dur="5s" begin="1.2s" repeatCount="indefinite">
-                        <mpath href="#in3"/>
-                    </animateMotion>
-                </circle>
-
-                <circle class="moving-dot dot-4" r="6">
-                    <animateMotion dur="5.4s" begin="1.8s" repeatCount="indefinite">
-                        <mpath href="#in4"/>
-                    </animateMotion>
-                </circle>
-
-                <circle class="moving-dot dot-5" r="6">
-                    <animateMotion dur="4.8s" repeatCount="indefinite">
-                        <mpath href="#out1"/>
-                    </animateMotion>
-                </circle>
-
-                <circle class="moving-dot dot-6" r="6">
-                    <animateMotion dur="5.2s" begin="0.7s" repeatCount="indefinite">
-                        <mpath href="#out2"/>
-                    </animateMotion>
-                </circle>
-
-                <circle class="moving-dot dot-7" r="6">
-                    <animateMotion dur="5s" begin="1.4s" repeatCount="indefinite">
-                        <mpath href="#out3"/>
-                    </animateMotion>
-                </circle>
-
-                <circle class="moving-dot dot-8" r="6">
-                    <animateMotion dur="5.4s" begin="2s" repeatCount="indefinite">
-                        <mpath href="#out4"/>
-                    </animateMotion>
-                </circle>
+                <circle class="moving-dot dot-1" r="6"><animateMotion dur="4.8s" repeatCount="indefinite"><mpath href="#in1"/></animateMotion></circle>
+                <circle class="moving-dot dot-2" r="6"><animateMotion dur="5.2s" begin="0.6s" repeatCount="indefinite"><mpath href="#in2"/></animateMotion></circle>
+                <circle class="moving-dot dot-3" r="6"><animateMotion dur="5s" begin="1.2s" repeatCount="indefinite"><mpath href="#in3"/></animateMotion></circle>
+                <circle class="moving-dot dot-4" r="6"><animateMotion dur="5.4s" begin="1.8s" repeatCount="indefinite"><mpath href="#in4"/></animateMotion></circle>
+                <circle class="moving-dot dot-5" r="6"><animateMotion dur="4.8s" repeatCount="indefinite"><mpath href="#out1"/></animateMotion></circle>
+                <circle class="moving-dot dot-6" r="6"><animateMotion dur="5.2s" begin="0.7s" repeatCount="indefinite"><mpath href="#out2"/></animateMotion></circle>
+                <circle class="moving-dot dot-7" r="6"><animateMotion dur="5s" begin="1.4s" repeatCount="indefinite"><mpath href="#out3"/></animateMotion></circle>
+                <circle class="moving-dot dot-8" r="6"><animateMotion dur="5.4s" begin="2s" repeatCount="indefinite"><mpath href="#out4"/></animateMotion></circle>
 
             </svg>
 
             <div class="moinem-core">
 
-                <img
-                    src="imagenes/logo/moinem_logo_light3.jpg"
-                    alt="Logo MOINEM"
-                    class="moinem-core-logo"
-                >
+                <img src="imagenes/logo/moinem_logo_light3.jpg" alt="Logo MOINEM" class="moinem-core-logo">
 
                 <strong>MOINEM</strong>
 
-                <span>
-                    Motor de Inteligencia
-                    <br>
-                    Empresarial
-                </span>
+                <span>Motor de Inteligencia<br>Empresarial</span>
 
             </div>
 
         </div>
 
-
-        <!-- SALIDAS -->
         <div class="flow-column flow-outputs">
 
-            <p class="flow-column-title">
-                ANÁLISIS Y RESULTADOS
-            </p>
+            <p class="flow-column-title">ANÁLISIS Y RESULTADOS</p>
 
-            <article class="flow-card">
-                <h3>Análisis</h3>
-                <p>
-                    Respuestas en lenguaje natural y análisis ad-hoc.
-                </p>
-            </article>
-
-            <article class="flow-card">
-                <h3>Dashboards</h3>
-                <p>
-                    Visualizaciones interactivas y personalizadas.
-                </p>
-            </article>
-
-            <article class="flow-card">
-                <h3>KPI e Insights ejecutivos</h3>
-                <p>
-                    Indicadores y hallazgos clave para apoyar decisiones.
-                </p>
-            </article>
-
-            <article class="flow-card">
-                <h3>Alertas y oportunidades</h3>
-                <p>
-                    Detección proactiva de eventos y desviaciones relevantes.
-                </p>
-            </article>
+            <article class="flow-card"><h3>Análisis</h3><p>Respuestas en lenguaje natural y análisis ad-hoc.</p></article>
+            <article class="flow-card"><h3>Dashboards</h3><p>Visualizaciones interactivas y personalizadas.</p></article>
+            <article class="flow-card"><h3>KPI e Insights ejecutivos</h3><p>Indicadores y hallazgos clave para apoyar decisiones.</p></article>
+            <article class="flow-card"><h3>Alertas y oportunidades</h3><p>Detección proactiva de eventos y desviaciones relevantes.</p></article>
 
         </div>
 
     </div>
 
-
-    <!-- BASE DE CONTROL -->
     <div class="control-layer">
-
-        <article>
-            <h3>Gobernanza</h3>
-            <p>Políticas y criterios definidos por tu empresa.</p>
-        </article>
-
-        <article>
-            <h3>Seguridad</h3>
-            <p>Protección y privacidad de los datos.</p>
-        </article>
-
-        <article>
-            <h3>Trazabilidad</h3>
-            <p>Auditoría y seguimiento de cada proceso.</p>
-        </article>
-
-        <article>
-            <h3>Reglas determinísticas</h3>
-            <p>Cálculos y procesos bajo reglas de negocio definidas.</p>
-        </article>
-
-        <article>
-            <h3>Control de acceso</h3>
-            <p>Roles, permisos y acceso controlado.</p>
-        </article>
-
+        <article><h3>Gobernanza</h3><p>Políticas y criterios definidos por tu empresa.</p></article>
+        <article><h3>Seguridad</h3><p>Protección y privacidad de los datos.</p></article>
+        <article><h3>Trazabilidad</h3><p>Auditoría y seguimiento de cada proceso.</p></article>
+        <article><h3>Reglas determinísticas</h3><p>Cálculos y procesos bajo reglas de negocio definidas.</p></article>
+        <article><h3>Control de acceso</h3><p>Roles, permisos y acceso controlado.</p></article>
     </div>
 
-
-    <!-- DEMOSTRACION -->
     <div class="demo-video-area strategic-demo">
 
-        <div class="demo-video-title centered">
+        <div class="demo-video-title">
 
-            <p class="section-eyebrow">
-                DEMOSTRACIÓN
-            </p>
+            <p class="section-eyebrow">DEMOSTRACIÓN</p>
 
-            <h3>
-                MOINEM en acción
-            </h3>
+            <h3>MOINEM EN ACCIÓN</h3>
 
-            <p>
-                Mira cómo una pregunta se transforma
-                en información para la toma de decisiones.
-            </p>
+            <p>Mira cómo una pregunta se transforma en información para la toma de decisiones.</p>
 
         </div>
 
@@ -465,27 +405,15 @@
             <div class="platform-topbar">
 
                 <div class="platform-brand">
-
-                    <span class="platform-brand-name">
-                        MOINEM
-                    </span>
-
-                    <span class="platform-brand-subtitle">
-                        Enterprise Intelligence
-                    </span>
-
+                    <span class="platform-brand-name">MOINEM</span>
+                    <span class="platform-brand-subtitle">Enterprise Intelligence</span>
                 </div>
 
                 <div class="platform-status">
-
                     <span class="status-dot"></span>
-
                     <span>System Ready</span>
-
                     <span class="status-separator">|</span>
-
                     <span>On-Premise</span>
-
                 </div>
 
             </div>
@@ -493,300 +421,82 @@
             <div class="platform-body">
 
                 <aside class="platform-sidebar">
-
-                    <button class="platform-nav-button"
-                            type="button"
-                            data-panel="requirements">
-                        Requirements
-                    </button>
-
-                    <button class="platform-nav-button"
-                            type="button"
-                            data-panel="dataknowledge">
-                        DataKnowledge
-                    </button>
-
-                    <button class="platform-nav-button"
-                            type="button"
-                            data-panel="analytics">
-                        Analytics
-                    </button>
-
-                    <button class="platform-nav-button active"
-                            type="button"
-                            data-panel="outputs">
-                        Outputs
-                    </button>
-
-                    <button class="platform-nav-button"
-                            type="button"
-                            data-panel="logs">
-                        Logs
-                    </button>
-
+                    <button class="platform-nav-button" type="button" data-panel="requirements">Requirements</button>
+                    <button class="platform-nav-button" type="button" data-panel="dataknowledge">DataKnowledge</button>
+                    <button class="platform-nav-button" type="button" data-panel="analytics">Analytics</button>
+                    <button class="platform-nav-button active" type="button" data-panel="outputs">Outputs</button>
+                    <button class="platform-nav-button" type="button" data-panel="logs">Logs</button>
                 </aside>
 
                 <div class="platform-content">
 
-                    <section class="platform-panel"
-                             id="panel-requirements">
-
+                    <section class="platform-panel" id="panel-requirements">
                         <div class="platform-panel-header">
-
-                            <div>
-                                <span class="platform-kicker">
-                                    REQUIREMENTS
-                                </span>
-
-                                <h4>
-                                    Ask MOINEM
-                                </h4>
-                            </div>
-
-                            <span class="platform-badge">
-                                Natural Language
-                            </span>
+                            <div><span class="platform-kicker">REQUIREMENTS</span><h4>Ask MOINEM</h4></div>
+                            <span class="platform-badge">Natural Language</span>
                         </div>
-
                         <div class="platform-question">
-
-                            <span class="question-label">
-                                Business question
-                            </span>
-
-                            <p>
-                                Compara el precio promedio de Chile
-                                vs Brasil por trimestre.
-                            </p>
-
-                            <button class="platform-run-button"
-                                    type="button">
-                                Run Analysis
-                            </button>
-
+                            <span class="question-label">Business question</span>
+                            <p>Compara el precio promedio de Chile vs Brasil por trimestre.</p>
+                            <button class="platform-run-button" type="button">Run Analysis</button>
                         </div>
-
                         <div class="requirements-grid">
-
-                            <div class="mini-card">
-                                <span>Metric</span>
-                                <strong>Average Price</strong>
-                            </div>
-
-                            <div class="mini-card">
-                                <span>Markets</span>
-                                <strong>CL / BR</strong>
-                            </div>
-
-                            <div class="mini-card">
-                                <span>Period</span>
-                                <strong>Quarter</strong>
-                            </div>
-
+                            <div class="mini-card"><span>Metric</span><strong>Average Price</strong></div>
+                            <div class="mini-card"><span>Markets</span><strong>CL / BR</strong></div>
+                            <div class="mini-card"><span>Period</span><strong>Quarter</strong></div>
                         </div>
-
                     </section>
 
-
-                    <section class="platform-panel"
-                             id="panel-dataknowledge">
-
+                    <section class="platform-panel" id="panel-dataknowledge">
                         <div class="platform-panel-header">
-
-                            <div>
-                                <span class="platform-kicker">
-                                    DATAKNOWLEDGE
-                                </span>
-
-                                <h4>
-                                    Business knowledge
-                                </h4>
-                            </div>
-
-                            <span class="platform-badge">
-                                Validated
-                            </span>
-
+                            <div><span class="platform-kicker">DATAKNOWLEDGE</span><h4>Business knowledge</h4></div>
+                            <span class="platform-badge">Validated</span>
                         </div>
-
                         <div class="knowledge-table">
-
-                            <div>
-                                <span>Dataset</span>
-                                <strong>commercial_data.xlsx</strong>
-                            </div>
-
-                            <div>
-                                <span>Dimensions</span>
-                                <strong>Market · Product · Month</strong>
-                            </div>
-
-                            <div>
-                                <span>Metrics</span>
-                                <strong>Sales · Volume · Cost</strong>
-                            </div>
-
-                            <div>
-                                <span>Business rule</span>
-                                <strong>Average price = Sales / Volume</strong>
-                            </div>
-
+                            <div><span>Dataset</span><strong>commercial_data.xlsx</strong></div>
+                            <div><span>Dimensions</span><strong>Market · Product · Month</strong></div>
+                            <div><span>Metrics</span><strong>Sales · Volume · Cost</strong></div>
+                            <div><span>Business rule</span><strong>Average price = Sales / Volume</strong></div>
                         </div>
-
                     </section>
 
-
-                    <section class="platform-panel"
-                             id="panel-analytics">
-
+                    <section class="platform-panel" id="panel-analytics">
                         <div class="platform-panel-header">
-
-                            <div>
-                                <span class="platform-kicker">
-                                    ANALYTICS
-                                </span>
-
-                                <h4>
-                                    Analytical execution
-                                </h4>
-                            </div>
-
-                            <span class="platform-badge">
-                                Deterministic
-                            </span>
-
+                            <div><span class="platform-kicker">ANALYTICS</span><h4>Analytical execution</h4></div>
+                            <span class="platform-badge">Deterministic</span>
                         </div>
-
                         <div class="analytics-steps">
-
-                            <div class="analytics-step">
-                                <span class="step-check">✓</span>
-                                <div>
-                                    <strong>Request interpreted</strong>
-                                    <small>
-                                        Metric, markets and period identified
-                                    </small>
-                                </div>
-                            </div>
-
-                            <div class="analytics-step">
-                                <span class="step-check">✓</span>
-                                <div>
-                                    <strong>Business rules validated</strong>
-                                    <small>
-                                        DataKnowledge definition applied
-                                    </small>
-                                </div>
-                            </div>
-
-                            <div class="analytics-step">
-                                <span class="step-check">✓</span>
-                                <div>
-                                    <strong>Analytical process executed</strong>
-                                    <small>
-                                        Comparison and aggregation completed
-                                    </small>
-                                </div>
-                            </div>
-
+                            <div class="analytics-step"><span class="step-check">✓</span><div><strong>Request interpreted</strong><small>Metric, markets and period identified</small></div></div>
+                            <div class="analytics-step"><span class="step-check">✓</span><div><strong>Business rules validated</strong><small>DataKnowledge definition applied</small></div></div>
+                            <div class="analytics-step"><span class="step-check">✓</span><div><strong>Analytical process executed</strong><small>Comparison and aggregation completed</small></div></div>
                         </div>
-
                     </section>
 
-
-                    <section class="platform-panel active"
-                             id="panel-outputs">
-
+                    <section class="platform-panel active" id="panel-outputs">
                         <div class="platform-panel-header">
-
-                            <div>
-                                <span class="platform-kicker">
-                                    OUTPUTS
-                                </span>
-
-                                <h4>
-                                    Generated result
-                                </h4>
-                            </div>
-
-                            <span class="platform-badge">
-                                Ready
-                            </span>
-
+                            <div><span class="platform-kicker">OUTPUTS</span><h4>Generated result</h4></div>
+                            <span class="platform-badge">Ready</span>
                         </div>
-
                         <div class="platform-video-frame">
-
-                            <video
-                                autoplay
-                                muted
-                                loop
-                                playsinline>
-
-                                <source
-                                    src="videos/demo_moinem.mp4"
-                                    type="video/mp4">
-
-                                Tu navegador no admite
-                                la reproducción de video.
-
+                            <video autoplay muted loop playsinline>
+                                <source src="videos/demo_moinem.mp4" type="video/mp4">
+                                Tu navegador no admite la reproducción de video.
                             </video>
-
                         </div>
-
                     </section>
 
-
-                    <section class="platform-panel"
-                             id="panel-logs">
-
+                    <section class="platform-panel" id="panel-logs">
                         <div class="platform-panel-header">
-
-                            <div>
-                                <span class="platform-kicker">
-                                    LOGS
-                                </span>
-
-                                <h4>
-                                    Execution trace
-                                </h4>
-                            </div>
-
-                            <span class="platform-badge">
-                                Auditable
-                            </span>
-
+                            <div><span class="platform-kicker">LOGS</span><h4>Execution trace</h4></div>
+                            <span class="platform-badge">Auditable</span>
                         </div>
-
                         <div class="logs-box">
-
-                            <p>
-                                <span>10:21:04</span>
-                                Request received
-                            </p>
-
-                            <p>
-                                <span>10:21:05</span>
-                                Intent validated
-                            </p>
-
-                            <p>
-                                <span>10:21:05</span>
-                                DataKnowledge loaded
-                            </p>
-
-                            <p>
-                                <span>10:21:06</span>
-                                Analytical pipeline executed
-                            </p>
-
-                            <p>
-                                <span>10:21:07</span>
-                                Output generated successfully
-                            </p>
-
+                            <p><span>10:21:04</span> Request received</p>
+                            <p><span>10:21:05</span> Intent validated</p>
+                            <p><span>10:21:05</span> DataKnowledge loaded</p>
+                            <p><span>10:21:06</span> Analytical pipeline executed</p>
+                            <p><span>10:21:07</span> Output generated successfully</p>
                         </div>
-
                     </section>
 
                 </div>
@@ -799,21 +509,15 @@
 
 </section>
 
-
 <!-- =========================
      CASOS DE USO
 ========================= -->
 
-<section id="casos-uso"
-         class="content-section soft-section">
+<section id="casos-uso" class="content-section soft-section">
 
-    <p class="section-eyebrow">
-        CASOS DE USO
-    </p>
+    <p class="section-eyebrow">CASOS DE USO</p>
 
-    <h2>
-        Inteligencia aplicada a distintas áreas del negocio
-    </h2>
+    <h2>Inteligencia aplicada a distintas áreas del negocio</h2>
 
     <p class="section-lead use-cases-lead">
         Desde consultas ejecutivas hasta análisis más profundos,
@@ -821,311 +525,97 @@
     </p>
 
     <div class="use-cases-grid">
-
-        <article class="use-case-card">
-
-            <h3>Comercial</h3>
-
-            <p>
-                Analiza ventas, precios, volumen, mix,
-                márgenes, clientes, productos y mercados.
-            </p>
-
-            <small>
-                Ejemplo: compara precio promedio y margen
-                por mercado, producto y período.
-            </small>
-
-        </article>
-
-
-        <article class="use-case-card">
-
-            <h3>Finanzas y Control de Gestión</h3>
-
-            <p>
-                Monitorea presupuesto, forecast, desviaciones,
-                costos y rentabilidad.
-            </p>
-
-            <small>
-                Ejemplo: identifica las principales desviaciones
-                versus presupuesto y sus fuentes.
-            </small>
-
-        </article>
-
-
-        <article class="use-case-card">
-
-            <h3>Operaciones</h3>
-
-            <p>
-                Explora productividad, eficiencia,
-                inventarios, capacidad y desempeño operacional.
-            </p>
-
-            <small>
-                Ejemplo: detecta unidades, períodos o procesos
-                con desviaciones relevantes.
-            </small>
-
-        </article>
-
-
-        <article class="use-case-card">
-
-            <h3>Riesgo y Clientes</h3>
-
-            <p>
-                Identifica patrones, señales de riesgo,
-                comportamiento y oportunidades de retención.
-            </p>
-
-            <small>
-                Ejemplo: detecta clientes con señales
-                tempranas de fuga o deterioro.
-            </small>
-
-        </article>
-
-
-        <article class="use-case-card">
-
-            <h3>Dirección y Gerencia</h3>
-
-            <p>
-                Consolida indicadores y análisis ejecutivos
-                para apoyar decisiones transversales.
-            </p>
-
-            <small>
-                Ejemplo: resume oportunidades, riesgos
-                y desviaciones relevantes del negocio.
-            </small>
-
-        </article>
-
-
-        <article class="use-case-card">
-
-            <h3>Analítica Avanzada</h3>
-
-            <p>
-                Incorpora modelos predictivos, segmentación,
-                detección de anomalías y escenarios.
-            </p>
-
-            <small>
-                Ejemplo: estima probabilidades, tendencias
-                o escenarios utilizando metodologías definidas.
-            </small>
-
-        </article>
-
+        <article class="use-case-card"><h3>Comercial</h3><p>Analiza ventas, precios, volumen, mix, márgenes, clientes, productos y mercados.</p><small>Ejemplo: compara precio promedio y margen por mercado, producto y período.</small></article>
+        <article class="use-case-card"><h3>Finanzas y Control de Gestión</h3><p>Monitorea presupuesto, forecast, desviaciones, costos y rentabilidad.</p><small>Ejemplo: identifica las principales desviaciones versus presupuesto y sus fuentes.</small></article>
+        <article class="use-case-card"><h3>Operaciones</h3><p>Explora productividad, eficiencia, inventarios, capacidad y desempeño operacional.</p><small>Ejemplo: detecta unidades, períodos o procesos con desviaciones relevantes.</small></article>
+        <article class="use-case-card"><h3>Riesgo y Clientes</h3><p>Identifica patrones, señales de riesgo, comportamiento y oportunidades de retención.</p><small>Ejemplo: detecta clientes con señales tempranas de fuga o deterioro.</small></article>
+        <article class="use-case-card"><h3>Dirección y Gerencia</h3><p>Consolida indicadores y análisis ejecutivos para apoyar decisiones transversales.</p><small>Ejemplo: resume oportunidades, riesgos y desviaciones relevantes del negocio.</small></article>
+        <article class="use-case-card"><h3>Analítica Avanzada</h3><p>Incorpora modelos predictivos, segmentación, detección de anomalías y escenarios.</p><small>Ejemplo: estima probabilidades, tendencias o escenarios utilizando metodologías definidas.</small></article>
     </div>
 
 </section>
-
 
 <!-- =========================
      INSIGHTS
 ========================= -->
 
-<section id="insights"
-         class="content-section">
+<section id="insights" class="content-section">
 
-    <p class="section-eyebrow">
-        MOINEM INSIGHTS
-    </p>
+    <p class="section-eyebrow">MOINEM INSIGHTS</p>
 
-    <h2>
-        IA empresarial explicada desde el negocio
-    </h2>
+    <h2>IA empresarial explicada desde el negocio</h2>
 
     <div class="insights-grid">
-
-        <article>
-
-            <h3>
-                ¿Cómo implementar IA
-                en una empresa?
-            </h3>
-
-            <a href="#">
-                Leer insight
-            </a>
-
-        </article>
-
-
-        <article>
-
-            <h3>
-                ¿Cómo automatizar el
-                análisis comercial?
-            </h3>
-
-            <a href="#">
-                Leer insight
-            </a>
-
-        </article>
-
-
-        <article>
-
-            <h3>
-                ¿Cómo utilizar IA sin
-                exponer datos sensibles?
-            </h3>
-
-            <a href="#">
-                Leer insight
-            </a>
-
-        </article>
-
-
-        <article>
-
-            <h3>
-                ¿Los dashboards tradicionales
-                siguen siendo suficientes?
-            </h3>
-
-            <a href="#">
-                Leer insight
-            </a>
-
-        </article>
-
+        <article><h3>¿Cómo implementar IA en una empresa?</h3><a href="#">Leer insight</a></article>
+        <article><h3>¿Cómo automatizar el análisis comercial?</h3><a href="#">Leer insight</a></article>
+        <article><h3>¿Cómo utilizar IA sin exponer datos sensibles?</h3><a href="#">Leer insight</a></article>
+        <article><h3>¿Los dashboards tradicionales siguen siendo suficientes?</h3><a href="#">Leer insight</a></article>
     </div>
 
 </section>
-
 
 <!-- =========================
      CONTACTO
 ========================= -->
 
-<section id="contacto"
-         class="contact-section">
+<section id="contacto" class="contact-section">
 
-    <p class="section-eyebrow">
-        CONTACTO
-    </p>
+    <div class="contact-identity">
+        <img src="imagenes/logo/moinem_logo_light3.jpg" alt="MOINEM">
+        <a href="mailto:contacto@moinem.cl">contacto@moinem.cl</a>
+        <a href="https://wa.me/56989633544" target="_blank">+56 9 8963 3544</a>
+    </div>
 
-    <h2>
-        Conversemos sobre tu organización
-    </h2>
+    <div class="contact-copy">
+        <p class="section-eyebrow">CONTACTO</p>
 
-    <p>
-        Si quieres conocer MOINEM, revisar un caso de uso
-        o explorar cómo podría incorporarse a tu empresa,
-        ponte en contacto con nosotros.
-    </p>
+        <h2>Conversemos sobre tu organización</h2>
 
-    <div class="contact-actions">
+        <p>
+            Si quieres conocer MOINEM, revisar un caso de uso
+            o explorar cómo podría incorporarse a tu empresa,
+            ponte en contacto con nosotros.
+        </p>
 
-       <div class="contact-actions">
-
-    <a class="primary-cta"
-       href="mailto:contacto@moinem.cl">
-        contacto
-    </a>
-
-    <a class="secondary-cta"
-       href="https://wa.me/56989633544"
-       target="_blank">
-        WhatsApp
-    </a>
-
-    
-</div>
-
+        <div class="contact-actions">
+            <a class="primary-cta" href="mailto:contacto@moinem.cl">contacto</a>
+            <a class="secondary-cta" href="https://wa.me/56989633544" target="_blank">WhatsApp</a>
+        </div>
     </div>
 
 </section>
 
 </main>
 
-
 <footer>
-
-    <p class="copyright">
-        © 2026 MOINEM
-    </p>
-
+    <p class="copyright">© 2026 MOINEM</p>
 </footer>
 
-
-<!-- =========================
-     SCRIPT PLATAFORMA DEMO
-========================= -->
-
 <script>
+    const platformButtons = document.querySelectorAll(".platform-nav-button");
+    const platformPanels = document.querySelectorAll(".platform-panel");
 
-    const platformButtons =
-        document.querySelectorAll(
-            ".platform-nav-button"
-        );
+    platformButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const panelName = button.dataset.panel;
 
-    const platformPanels =
-        document.querySelectorAll(
-            ".platform-panel"
-        );
+            platformButtons.forEach((item) => {
+                item.classList.remove("active");
+            });
 
-    platformButtons.forEach(
-        (button) => {
+            platformPanels.forEach((panel) => {
+                panel.classList.remove("active");
+            });
 
-            button.addEventListener(
-                "click",
-                () => {
+            button.classList.add("active");
 
-                    const panelName =
-                        button.dataset.panel;
+            const targetPanel = document.getElementById("panel-" + panelName);
 
-                    platformButtons.forEach(
-                        (item) => {
-                            item.classList.remove(
-                                "active"
-                            );
-                        }
-                    );
-
-                    platformPanels.forEach(
-                        (panel) => {
-                            panel.classList.remove(
-                                "active"
-                            );
-                        }
-                    );
-
-                    button.classList.add(
-                        "active"
-                    );
-
-                    const targetPanel =
-                        document.getElementById(
-                            "panel-" +
-                            panelName
-                        );
-
-                    if (targetPanel) {
-
-                        targetPanel.classList.add(
-                            "active"
-                        );
-
-                    }
-
-                }
-            );
-
-        }
-    );
-
+            if (targetPanel) {
+                targetPanel.classList.add("active");
+            }
+        });
+    });
 </script>
 
 </body>

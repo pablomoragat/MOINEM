@@ -90,15 +90,15 @@
       </div>
 
       <section class="section">
-        <div class="section-title"><span id="analysisNumber" class="number">5</span><div><h2>¿Qué buscas responder?</h2><p class="helper">Selecciona el tipo de análisis que necesitas.</p></div></div>
-        <select id="analysisType" required></select>
+        <div class="section-title"><span id="analysisNumber" class="number">5</span><div><h2>¿Qué buscas responder?</h2><p class="helper">Selecciona el tipo de análisis que necesitas. Puedes completar este punto o escribir directamente tu pregunta en el siguiente.</p></div></div>
+        <select id="analysisType"></select>
         <div id="analysisOtherWrap" class="other-field"><input id="analysisOther" type="text" placeholder="Especifica el tipo de análisis"></div>
       </section>
 
       <section class="section">
-        <div class="section-title"><span id="questionNumber" class="number">6</span><div><h2>Tu pregunta</h2><p class="helper">Escribe la pregunta concreta que quieres resolver.</p></div></div>
-        <textarea id="question" placeholder="Ej.: ¿Qué productos explican la caída del margen en Chile versus presupuesto?" required></textarea>
-        <p id="formError" class="error">Selecciona un área, un tipo de análisis y escribe tu pregunta antes de continuar.</p>
+        <div class="section-title"><span id="questionNumber" class="number">6</span><div><h2>Tu pregunta</h2><p class="helper">Escribe la pregunta concreta que quieres resolver. Este campo es opcional si ya seleccionaste el tipo de análisis anterior.</p></div></div>
+        <textarea id="question" placeholder="Ej.: ¿Qué productos explican la caída del margen en Chile versus presupuesto?"></textarea>
+        <p id="formError" class="error">Selecciona un área y completa al menos el tipo de análisis o tu pregunta.</p>
       </section>
 
       <div class="actions"><button class="primary" type="submit">SIMULAR MI CASO</button></div>
@@ -139,7 +139,7 @@
       RRHH: ['Dotación','Rotación','Ausentismo','Productividad','Costo persona','Otro'],
       Otro: ['Indicador principal','Otro']
     };
-    const analysisStandard = ['', 'Resumen','Comparar','Ranking','Detectar desviaciones','Explicar causas','Tendencia','Otro'];
+    const analysisStandard = ['', 'Resumen','Comparar','Ranking','Detectar desviaciones','Explicar causas','Tendencia','Todas las anteriores','Otro'];
     const analysisDocuments = ['', 'Resumir','Comparar documentos','Buscar información','Detectar diferencias','Extraer datos','Evaluar cumplimiento','Otro'];
 
     function toggle(id, show) {
@@ -211,7 +211,10 @@
 
     document.getElementById('caseForm').addEventListener('submit', event => {
       event.preventDefault();
-      const valid = area.value && analysisType.value && document.getElementById('question').value.trim();
+      const hasArea = !!area.value;
+      const hasAnalysis = !!analysisType.value;
+      const hasQuestion = !!document.getElementById('question').value.trim();
+      const valid = hasArea && (hasAnalysis || hasQuestion);
       document.getElementById('formError').classList.toggle('show', !valid);
       if (!valid) return;
       modal.classList.add('show');

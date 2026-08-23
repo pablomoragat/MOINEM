@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOINEM | Simula tu caso</title>
+  <link rel="stylesheet" href="css/simula-tu-caso.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Volver a MOINEM">
+      <span class="brand-mark">M</span>
+      <span class="brand-text"><strong>MOINEM</strong><span>Motor de Inteligencia Empresarial</span></span>
+    </a>
+    <a class="back-link" href="index.html">← Volver al inicio</a>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">DEMOSTRACIÓN</p>
+      <h1>Simula tu caso</h1>
+      <p class="lead">Selecciona las opciones que mejor representan tu necesidad. MOINEM utilizará esta información para estructurar tu caso de análisis.</p>
+    </section>
+
+    <form id="caseForm" class="form-shell" novalidate>
+      <section class="section">
+        <div class="section-title"><span class="number">1</span><div><h2>Área / Tipo de caso</h2><p class="helper">Selecciona el área principal que quieres analizar.</p></div></div>
+        <select id="area" required>
+          <option value="">Selecciona una opción...</option>
+          <option>Comercial</option>
+          <option>Finanzas</option>
+          <option>Operaciones</option>
+          <option>RRHH</option>
+          <option>Documentos</option>
+          <option>Otro</option>
+        </select>
+        <div id="areaOtherWrap" class="other-field"><input id="areaOther" type="text" placeholder="Especifica el tipo de caso"></div>
+      </section>
+
+      <div id="standardFlow">
+        <section class="section">
+          <div class="section-title"><span class="number">2</span><div><h2>Dimensiones a analizar <span id="dimCounter" class="counter">0/5</span></h2><p class="helper">Selecciona hasta 5 dimensiones.</p></div></div>
+          <div id="dimensions" class="checks">
+            <div class="check"><input type="checkbox" id="d1" value="Producto"><label for="d1">Producto</label></div>
+            <div class="check"><input type="checkbox" id="d2" value="Cliente"><label for="d2">Cliente</label></div>
+            <div class="check"><input type="checkbox" id="d3" value="Canal"><label for="d3">Canal</label></div>
+            <div class="check"><input type="checkbox" id="d4" value="País"><label for="d4">País</label></div>
+            <div class="check"><input type="checkbox" id="d5" value="Sucursal"><label for="d5">Sucursal</label></div>
+            <div class="check"><input type="checkbox" id="d6" value="Mes"><label for="d6">Mes</label></div>
+            <div class="check"><input type="checkbox" id="d7" value="Ejecutivo"><label for="d7">Ejecutivo</label></div>
+            <div class="check"><input type="checkbox" id="d8" value="Otro"><label for="d8">Otro</label></div>
+          </div>
+          <div id="dimensionOtherWrap" class="other-field"><input id="dimensionOther" type="text" placeholder="Escribe la dimensión"></div>
+          <p id="dimError" class="error">Puedes seleccionar un máximo de 5 dimensiones.</p>
+        </section>
+
+        <section class="section">
+          <div class="section-title"><span class="number">3</span><div><h2>Escenario</h2><p class="helper">Selecciona uno o más escenarios de comparación.</p></div></div>
+          <div id="scenarios" class="checks">
+            <div class="check"><input type="checkbox" id="s1" value="Actual"><label for="s1">Actual</label></div>
+            <div class="check"><input type="checkbox" id="s2" value="Presupuesto"><label for="s2">Presupuesto</label></div>
+            <div class="check"><input type="checkbox" id="s3" value="Forecast"><label for="s3">Forecast</label></div>
+            <div class="check"><input type="checkbox" id="s4" value="Año anterior"><label for="s4">Año anterior</label></div>
+            <div class="check"><input type="checkbox" id="s5" value="Otro"><label for="s5">Otro</label></div>
+          </div>
+          <div id="scenarioOtherWrap" class="other-field"><input id="scenarioOther" type="text" placeholder="Escribe el escenario"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-title"><span class="number">4</span><div><h2>Indicadores</h2><p class="helper">Las opciones cambian según el área seleccionada.</p></div></div>
+          <div id="indicators" class="checks"></div>
+          <div id="indicatorOtherWrap" class="other-field"><input id="indicatorOther" type="text" placeholder="Escribe el indicador"></div>
+        </section>
+      </div>
+
+      <div id="documentFlow" class="hidden">
+        <section class="section">
+          <div class="section-title"><span class="number">2</span><div><h2>Tipo de documento</h2><p class="helper">Selecciona el tipo de documento que deseas analizar.</p></div></div>
+          <div id="documentTypes" class="checks">
+            <div class="check"><input type="checkbox" id="doc1" value="Contrato"><label for="doc1">Contrato</label></div>
+            <div class="check"><input type="checkbox" id="doc2" value="Factura"><label for="doc2">Factura</label></div>
+            <div class="check"><input type="checkbox" id="doc3" value="Informe"><label for="doc3">Informe</label></div>
+            <div class="check"><input type="checkbox" id="doc4" value="CV"><label for="doc4">CV</label></div>
+            <div class="check"><input type="checkbox" id="doc5" value="Bases de licitación"><label for="doc5">Bases de licitación</label></div>
+            <div class="check"><input type="checkbox" id="doc6" value="Políticas / Procedimientos"><label for="doc6">Políticas / Procedimientos</label></div>
+            <div class="check"><input type="checkbox" id="doc7" value="Otro"><label for="doc7">Otro</label></div>
+          </div>
+          <div id="documentOtherWrap" class="other-field"><input id="documentOther" type="text" placeholder="Escribe el tipo de documento"></div>
+        </section>
+      </div>
+
+      <section class="section">
+        <div class="section-title"><span id="analysisNumber" class="number">5</span><div><h2>¿Qué buscas responder?</h2><p class="helper">Selecciona el tipo de análisis que necesitas.</p></div></div>
+        <select id="analysisType" required></select>
+        <div id="analysisOtherWrap" class="other-field"><input id="analysisOther" type="text" placeholder="Especifica el tipo de análisis"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-title"><span id="questionNumber" class="number">6</span><div><h2>Tu pregunta</h2><p class="helper">Escribe la pregunta concreta que quieres resolver.</p></div></div>
+        <textarea id="question" placeholder="Ej.: ¿Qué productos explican la caída del margen en Chile versus presupuesto?" required></textarea>
+        <p id="formError" class="error">Selecciona un área, un tipo de análisis y escribe tu pregunta antes de continuar.</p>
+      </section>
+
+      <div class="actions"><button class="primary" type="submit">SIMULAR MI CASO</button></div>
+    </form>
+
+    <p class="test-note">Versión de prueba. El envío automático a contacto@moinem.cl aún no está conectado.</p>
+  </main>
+
+  <div id="contactModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <h2 id="modalTitle">Último paso</h2>
+      <p>Ingresa tus datos para asociarlos a la simulación.</p>
+      <div class="field"><label for="userName">Nombre</label><input id="userName" type="text" autocomplete="name" placeholder="Tu nombre"></div>
+      <div class="field"><label for="userEmail">Email</label><input id="userEmail" type="email" autocomplete="email" placeholder="nombre@empresa.cl"></div>
+      <p id="contactError" class="error">Ingresa un nombre y un email con formato válido.</p>
+      <div id="submitStatus" class="status" aria-live="polite"></div>
+      <div class="modal-actions">
+        <button id="cancelModal" type="button" class="secondary">Volver</button>
+        <button id="sendCase" type="button" class="primary">ENVIAR CASO</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (() => {
+    const area = document.getElementById('area');
+    const standardFlow = document.getElementById('standardFlow');
+    const documentFlow = document.getElementById('documentFlow');
+    const analysisType = document.getElementById('analysisType');
+    const indicators = document.getElementById('indicators');
+    const modal = document.getElementById('contactModal');
+    const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const indicatorMap = {
+      Comercial: ['Ventas','Margen','Volumen','Precio promedio','Costo','Otro'],
+      Finanzas: ['Ingresos','EBITDA','Gastos','Flujo de caja','Variación presupuesto','Otro'],
+      Operaciones: ['Producción','Eficiencia','Tiempo de ciclo','Scrap / Merma','Costo operativo','Otro'],
+      RRHH: ['Dotación','Rotación','Ausentismo','Productividad','Costo persona','Otro'],
+      Otro: ['Indicador principal','Otro']
+    };
+    const analysisStandard = ['', 'Resumen','Comparar','Ranking','Detectar desviaciones','Explicar causas','Tendencia','Otro'];
+    const analysisDocuments = ['', 'Resumir','Comparar documentos','Buscar información','Detectar diferencias','Extraer datos','Evaluar cumplimiento','Otro'];
+
+    function toggle(id, show) {
+      document.getElementById(id).classList.toggle('show', !!show);
+    }
+
+    function setSelectOptions(select, values) {
+      select.innerHTML = '';
+      values.forEach((value, index) => {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = index === 0 ? 'Selecciona una opción...' : value;
+        select.appendChild(option);
+      });
+    }
+
+    function renderIndicators() {
+      indicators.innerHTML = '';
+      (indicatorMap[area.value] || []).forEach((value, index) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'check';
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.id = `ind${index}`;
+        input.value = value;
+        const label = document.createElement('label');
+        label.htmlFor = input.id;
+        label.textContent = value;
+        wrapper.append(input, label);
+        indicators.appendChild(wrapper);
+        if (value === 'Otro') input.addEventListener('change', () => toggle('indicatorOtherWrap', input.checked));
+      });
+      toggle('indicatorOtherWrap', false);
+    }
+
+    function updateFlow() {
+      const docs = area.value === 'Documentos';
+      standardFlow.classList.toggle('hidden', docs);
+      documentFlow.classList.toggle('hidden', !docs);
+      document.getElementById('analysisNumber').textContent = docs ? '3' : '5';
+      document.getElementById('questionNumber').textContent = docs ? '4' : '6';
+      setSelectOptions(analysisType, docs ? analysisDocuments : analysisStandard);
+      toggle('areaOtherWrap', area.value === 'Otro');
+      toggle('analysisOtherWrap', false);
+      renderIndicators();
+    }
+
+    area.addEventListener('change', updateFlow);
+    analysisType.addEventListener('change', () => toggle('analysisOtherWrap', analysisType.value === 'Otro'));
+
+    const dimChecks = [...document.querySelectorAll('#dimensions input[type="checkbox"]')];
+    dimChecks.forEach(cb => cb.addEventListener('change', () => {
+      const selected = dimChecks.filter(x => x.checked);
+      if (selected.length > 5) {
+        cb.checked = false;
+        document.getElementById('dimError').classList.add('show');
+        setTimeout(() => document.getElementById('dimError').classList.remove('show'), 2200);
+      }
+      document.getElementById('dimCounter').textContent = `${dimChecks.filter(x => x.checked).length}/5`;
+      const other = dimChecks.find(x => x.value === 'Otro');
+      toggle('dimensionOtherWrap', other.checked);
+    }));
+
+    const scenarioOther = [...document.querySelectorAll('#scenarios input')].find(x => x.value === 'Otro');
+    scenarioOther.addEventListener('change', () => toggle('scenarioOtherWrap', scenarioOther.checked));
+
+    const docOther = [...document.querySelectorAll('#documentTypes input')].find(x => x.value === 'Otro');
+    docOther.addEventListener('change', () => toggle('documentOtherWrap', docOther.checked));
+
+    document.getElementById('caseForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const valid = area.value && analysisType.value && document.getElementById('question').value.trim();
+      document.getElementById('formError').classList.toggle('show', !valid);
+      if (!valid) return;
+      modal.classList.add('show');
+      document.getElementById('userName').focus();
+    });
+
+    document.getElementById('cancelModal').addEventListener('click', () => modal.classList.remove('show'));
+    modal.addEventListener('click', event => { if (event.target === modal) modal.classList.remove('show'); });
+
+    document.getElementById('sendCase').addEventListener('click', () => {
+      const name = document.getElementById('userName').value.trim();
+      const email = document.getElementById('userEmail').value.trim();
+      const error = document.getElementById('contactError');
+      const status = document.getElementById('submitStatus');
+
+      if (!name || !emailRx.test(email)) {
+        error.classList.add('show');
+        return;
+      }
+
+      error.classList.remove('show');
+      status.className = 'status show warn';
+      status.textContent = 'Modo prueba: nombre, email y caso fueron validados. El envío a contacto@moinem.cl aún no está conectado.';
+    });
+
+    updateFlow();
+  })();
+  </script>
+</body>
+</html>

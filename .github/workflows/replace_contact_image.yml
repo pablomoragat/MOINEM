@@ -1,0 +1,36 @@
+name: Replace contact image
+
+on:
+  push:
+    paths:
+      - '.github/workflows/replace_contact_image.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  replace-image:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Rebuild higher-resolution contact image
+        shell: bash
+        run: |
+          cat tmp_img_0.txt tmp_img_1.txt tmp_img_2.txt tmp_img_3.txt > /tmp/contact_image.b64
+          base64 --decode /tmp/contact_image.b64 > imagenes/contacto/moinem_contact_team.jpg
+          rm -f tmp_img_0.txt tmp_img_1.txt tmp_img_2.txt tmp_img_3.txt tmp_test_marker.txt
+          rm -f .github/workflows/replace_contact_image.yml
+
+      - name: Commit improved image
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Mejora resolución de foto de contacto'
+          git push

@@ -104,7 +104,7 @@
       <div class="actions"><button class="primary" type="submit">SIMULAR MI CASO</button></div>
     </form>
 
-    <p class="test-note">Versión de prueba. El envío automático a contacto@moinem.cl aún no está conectado.</p>
+    <p class="test-note">La información enviada se utilizará únicamente para revisar tu caso y contactarte.</p>
   </main>
 
   <div id="contactModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -130,6 +130,8 @@
     const analysisType = document.getElementById('analysisType');
     const indicators = document.getElementById('indicators');
     const modal = document.getElementById('contactModal');
+    const sendCase = document.getElementById('sendCase');
+    const status = document.getElementById('submitStatus');
     const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const indicatorMap = {
@@ -187,6 +189,65 @@
       renderIndicators();
     }
 
+    function checkedValues(selector) {
+      return [...document.querySelectorAll(selector)]
+        .filter(input => input.checked)
+        .map(input => input.value);
+    }
+
+    function replaceOther(values, otherValue) {
+      const detail = otherValue.trim();
+      return values.map(value => value === 'Otro' && detail ? `Otro: ${detail}` : value);
+    }
+
+    function formatList(values) {
+      return values.length ? values.join(', ') : 'No seleccionado';
+    }
+
+    function buildCasePayload(name, email) {
+      const docs = area.value === 'Documentos';
+      const areaOther = document.getElementById('areaOther').value.trim();
+      const resolvedArea = area.value === 'Otro' && areaOther ? `Otro: ${areaOther}` : area.value;
+      const analysisOther = document.getElementById('analysisOther').value.trim();
+      const resolvedAnalysis = analysisType.value === 'Otro' && analysisOther ? `Otro: ${analysisOther}` : (analysisType.value || 'No seleccionado');
+      const question = document.getElementById('question').value.trim() || 'No ingresada';
+
+      const payload = {
+        _subject: `Nuevo caso MOINEM | ${resolvedArea}`,
+        _template: 'table',
+        _replyto: email,
+        Nombre: name,
+        Email: email,
+        'Área / Tipo de caso': resolvedArea,
+        'Tipo de análisis / Qué busca responder': resolvedAnalysis,
+        Pregunta: question,
+        'Fecha de envío': new Date().toLocaleString('es-CL'),
+        Origen: window.location.href
+      };
+
+      if (docs) {
+        payload['Tipo de documento'] = formatList(replaceOther(
+          checkedValues('#documentTypes input[type="checkbox"]'),
+          document.getElementById('documentOther').value
+        ));
+      } else {
+        payload.Dimensiones = formatList(replaceOther(
+          checkedValues('#dimensions input[type="checkbox"]'),
+          document.getElementById('dimensionOther').value
+        ));
+        payload.Escenarios = formatList(replaceOther(
+          checkedValues('#scenarios input[type="checkbox"]'),
+          document.getElementById('scenarioOther').value
+        ));
+        payload.Indicadores = formatList(replaceOther(
+          checkedValues('#indicators input[type="checkbox"]'),
+          document.getElementById('indicatorOther').value
+        ));
+      }
+
+      return payload;
+    }
+
     area.addEventListener('change', updateFlow);
     analysisType.addEventListener('change', () => toggle('analysisOtherWrap', analysisType.value === 'Otro'));
 
@@ -217,18 +278,23 @@
       const valid = hasArea && (hasAnalysis || hasQuestion);
       document.getElementById('formError').classList.toggle('show', !valid);
       if (!valid) return;
+
+      sendCase.disabled = false;
+      sendCase.textContent = 'ENVIAR CASO';
+      status.className = 'status';
+      status.textContent = '';
       modal.classList.add('show');
       document.getElementById('userName').focus();
     });
 
     document.getElementById('cancelModal').addEventListener('click', () => modal.classList.remove('show'));
     modal.addEventListener('click', event => { if (event.target === modal) modal.classList.remove('show'); });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') modal.classList.remove('show'); });
 
-    document.getElementById('sendCase').addEventListener('click', () => {
+    sendCase.addEventListener('click', async () => {
       const name = document.getElementById('userName').value.trim();
       const email = document.getElementById('userEmail').value.trim();
       const error = document.getElementById('contactError');
-      const status = document.getElementById('submitStatus');
 
       if (!name || !emailRx.test(email)) {
         error.classList.add('show');
@@ -236,8 +302,36 @@
       }
 
       error.classList.remove('show');
+      sendCase.disabled = true;
+      sendCase.textContent = 'ENVIANDO...';
       status.className = 'status show warn';
-      status.textContent = 'Modo prueba: nombre, email y caso fueron validados. El envío a contacto@moinem.cl aún no está conectado.';
+      status.textContent = 'Enviando tu caso...';
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/contacto@moinem.cl', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(buildCasePayload(name, email))
+        });
+
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || data.success === false || data.success === 'false') {
+          throw new Error(data.message || 'No fue posible enviar el caso');
+        }
+
+        status.className = 'status show success';
+        status.textContent = 'Caso enviado correctamente. Te contactaremos para revisar la información.';
+        sendCase.textContent = 'CASO ENVIADO';
+      } catch (sendError) {
+        console.error(sendError);
+        status.className = 'status show warn';
+        status.textContent = 'No pudimos enviar el caso en este momento. Puedes escribirnos a contacto@moinem.cl.';
+        sendCase.disabled = false;
+        sendCase.textContent = 'REINTENTAR';
+      }
     });
 
     updateFlow();

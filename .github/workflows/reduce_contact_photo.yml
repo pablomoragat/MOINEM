@@ -1,0 +1,94 @@
+name: Reduce contact photo
+
+on:
+  push:
+    paths:
+      - '.github/workflows/reduce_contact_photo.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  adjust-contact-photo:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reduce contact photo display size
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+
+          replacements = [
+              (
+                  '''        .contact-section {
+            display: grid;
+            grid-template-columns: minmax(300px, 42%) minmax(0, 58%);
+            gap: 60px;
+            align-items: start;
+            text-align: left;
+        }''',
+                  '''        .contact-section {
+            display: grid;
+            grid-template-columns: minmax(280px, 36%) minmax(0, 64%);
+            gap: 56px;
+            align-items: center;
+            text-align: left;
+        }'''
+              ),
+              (
+                  '''        .contact-team-photo {
+            width: 100%;
+            overflow: hidden;''',
+                  '''        .contact-team-photo {
+            width: 100%;
+            max-width: 560px;
+            overflow: hidden;'''
+              ),
+              (
+                  '''        .contact-team-image {
+            display: block;
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }''',
+                  '''        .contact-team-image {
+            display: block;
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }'''
+              ),
+              (
+                  '''        .contact-copy {
+            min-height: 280px;''',
+                  '''        .contact-copy {
+            min-height: 240px;'''
+              ),
+          ]
+
+          for old, new in replacements:
+              if old not in text:
+                  raise SystemExit(f'No se encontró el bloque esperado:\n{old}')
+              text = text.replace(old, new, 1)
+
+          path.write_text(text, encoding='utf-8')
+
+      - name: Remove temporary workflow
+        run: rm -f .github/workflows/reduce_contact_photo.yml
+
+      - name: Commit adjustment
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html .github/workflows/reduce_contact_photo.yml
+          git commit -m 'Reduce tamaño visual de foto de contacto'
+          git push

@@ -58,11 +58,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             text-transform: uppercase;
         }
 
-        /* Contacto en dos columnas: identidad a la izquierda, texto y botones a la derecha */
+        /* Contacto en dos columnas: personas a la izquierda, conversación a la derecha */
         .contact-section {
             display: grid;
-            grid-template-columns: minmax(260px, 34%) minmax(0, 66%);
-            gap: 54px;
+            grid-template-columns: minmax(300px, 42%) minmax(0, 58%);
+            gap: 60px;
             align-items: center;
             text-align: left;
         }
@@ -74,19 +74,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             gap: 12px;
         }
 
-        .contact-identity img {
-            width: 220px;
-            max-width: 100%;
-            height: auto;
+        .contact-team-photo {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 18px;
+            border: 1px solid #dbeafe;
+            background: #fff;
+            box-shadow: 0 18px 44px rgba(15, 23, 42, .10);
+        }
+
+        .contact-team-image {
+            display: block;
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .contact-photo-caption {
+            margin: 2px 0 6px;
+            color: #475569;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .contact-brand-line {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 2px;
+        }
+
+        .contact-logo {
+            width: 72px;
+            height: 72px;
             object-fit: contain;
             background: transparent;
             mix-blend-mode: multiply;
         }
 
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+
         .contact-identity a {
             text-decoration: none;
             color: #0f172a;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
         }
 
@@ -100,6 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .contact-copy .contact-actions {
             justify-content: flex-start;
+            flex-wrap: wrap;
         }
 
         @media (max-width: 760px) {
@@ -123,8 +160,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 gap: 32px;
             }
 
-            .contact-identity img {
-                width: 180px;
+            .contact-team-image {
+                height: 220px;
+            }
+
+            .contact-logo {
+                width: 64px;
+                height: 64px;
             }
         }
     </style>
@@ -574,9 +616,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="contacto" class="contact-section">
 
     <div class="contact-identity">
-        <img src="imagenes/logo/moinem_logo_light3.jpg" alt="MOINEM">
-        <a href="mailto:contacto@moinem.cl">contacto@moinem.cl</a>
-        <a href="https://wa.me/56989633544" target="_blank">+56 9 8963 3544</a>
+        <div class="contact-team-photo">
+            <img
+                class="contact-team-image"
+                src="https://images.unsplash.com/photo-1758873271772-6bbc792c1514?auto=format&fit=crop&fm=jpg&q=82&w=1200"
+                alt="Profesionales colaborando frente a un dashboard"
+                loading="lazy"
+            >
+        </div>
+
+        <p class="contact-photo-caption">Tecnología al servicio de las personas y del negocio.</p>
+
+        <div class="contact-brand-line">
+            <img class="contact-logo" src="imagenes/logo/moinem_logo_light3.jpg" alt="MOINEM">
+            <div class="contact-details">
+                <a href="mailto:contacto@moinem.cl">contacto@moinem.cl</a>
+                <a href="https://wa.me/56989633544" target="_blank" rel="noopener noreferrer">+56 9 8963 3544</a>
+            </div>
+        </div>
     </div>
 
     <div class="contact-copy">
@@ -591,8 +648,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </p>
 
         <div class="contact-actions">
-            <a class="primary-cta" href="mailto:contacto@moinem.cl">contacto</a>
-            <a class="secondary-cta" href="https://wa.me/56989633544" target="_blank">WhatsApp</a>
+            <a class="primary-cta" href="simula-tu-caso.html">Simula tu caso</a>
+            <a class="secondary-cta" href="mailto:contacto@moinem.cl">Contacto</a>
+            <a class="secondary-cta" href="https://wa.me/56989633544" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
     </div>
 

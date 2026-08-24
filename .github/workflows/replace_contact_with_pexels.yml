@@ -1,0 +1,48 @@
+name: Replace contact image with Pexels
+
+on:
+  push:
+    paths:
+      - '.github/workflows/replace_contact_with_pexels.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  replace-contact-image:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Replace contact image source
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+
+          old = 'src="imagenes/contacto/moinem_contact_team.jpg"\n                alt="Profesionales senior colaborando en una reunión de negocio"'
+          new = 'src="https://images.pexels.com/photos/7163395/pexels-photo-7163395.jpeg?auto=compress&cs=tinysrgb&w=1600"\n                alt="Equipo profesional colaborando con laptops y gráficos en una oficina moderna"'
+
+          if old not in text:
+              raise SystemExit('No se encontró la imagen de contacto esperada en index.html')
+
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+
+      - name: Remove temporary workflow
+        run: rm -f .github/workflows/replace_contact_with_pexels.yml
+
+      - name: Commit replacement
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html .github/workflows/replace_contact_with_pexels.yml
+          git commit -m 'Reemplaza foto de contacto por imagen Pexels HD'
+          git push

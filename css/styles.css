@@ -2141,7 +2141,7 @@ footer {
     aspect-ratio: 520 / 339;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.23;
+    opacity: 0.32;
     background: url("../imagenes/moinem-cubos-electricos.png") center / contain no-repeat;
 }
 

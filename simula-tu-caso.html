@@ -129,16 +129,24 @@
     const documentFlow = document.getElementById('documentFlow');
     const analysisType = document.getElementById('analysisType');
     const indicators = document.getElementById('indicators');
+    const dimensions = document.getElementById('dimensions');
+    const dimensionOther = document.getElementById('dimensionOther');
+    const dimensionSelections = {};
+    const dimensionOtherValues = {};
     const modal = document.getElementById('contactModal');
     const sendCase = document.getElementById('sendCase');
     const status = document.getElementById('submitStatus');
     const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    const dimensionMap = {
+      RRHH: ['Área','Cargo','Centro de costo','Ubicación o sucursal','Tipo de contrato','Fecha de ingreso','Fecha de salida','Antigüedad','Jefatura o supervisor','Otro'],
+      default: ['Producto','Cliente','Canal','País','Sucursal','Mes','Ejecutivo','Otro']
+    };
     const indicatorMap = {
       Comercial: ['Ventas','Margen','Volumen','Precio promedio','Costo','Otro'],
       Finanzas: ['Ingresos','EBITDA','Gastos','Flujo de caja','Variación presupuesto','Otro'],
       Operaciones: ['Producción','Eficiencia','Tiempo de ciclo','Scrap / Merma','Costo operativo','Otro'],
-      RRHH: ['Dotación','Rotación','Ausentismo','Productividad','Costo persona','Otro'],
+      RRHH: ['Dotación','Remuneración','Costo laboral','Nuevas contrataciones','Salidas','Rotación','Ausentismo','Licencias médicas','Vacaciones','Antigüedad promedio','Horas extraordinarias','Otro'],
       Otro: ['Indicador principal','Otro']
     };
     const analysisStandard = ['', 'Resumen','Comparar','Ranking','Detectar desviaciones','Explicar causas','Tendencia','Todas las anteriores','Otro'];
@@ -156,6 +164,50 @@
         option.textContent = index === 0 ? 'Selecciona una opción...' : value;
         select.appendChild(option);
       });
+    }
+
+    function renderDimensions() {
+      dimensions.innerHTML = '';
+      const values = dimensionMap[area.value] || dimensionMap.default;
+      const selectedValues = new Set(dimensionSelections[area.value] || []);
+
+      values.forEach((value, index) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'check';
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.id = `dim-${area.value || 'default'}-${index}`;
+        input.value = value;
+        input.checked = selectedValues.has(value);
+        const label = document.createElement('label');
+        label.htmlFor = input.id;
+        label.textContent = value;
+        wrapper.append(input, label);
+        dimensions.appendChild(wrapper);
+
+        input.addEventListener('change', () => {
+          const currentChecks = [...dimensions.querySelectorAll('input[type="checkbox"]')];
+          const selected = currentChecks.filter(item => item.checked);
+          if (selected.length > 5) {
+            input.checked = false;
+            document.getElementById('dimError').classList.add('show');
+            setTimeout(() => document.getElementById('dimError').classList.remove('show'), 2200);
+          }
+          dimensionSelections[area.value] = currentChecks
+            .filter(item => item.checked)
+            .map(item => item.value);
+          document.getElementById('dimCounter').textContent =
+            `${dimensionSelections[area.value].length}/5`;
+          const other = currentChecks.find(item => item.value === 'Otro');
+          toggle('dimensionOtherWrap', !!other?.checked);
+        });
+      });
+
+      document.getElementById('dimCounter').textContent =
+        `${[...dimensions.querySelectorAll('input:checked')].length}/5`;
+      dimensionOther.value = dimensionOtherValues[area.value] || '';
+      const other = [...dimensions.querySelectorAll('input')].find(item => item.value === 'Otro');
+      toggle('dimensionOtherWrap', !!other?.checked);
     }
 
     function renderIndicators() {
@@ -186,6 +238,7 @@
       setSelectOptions(analysisType, docs ? analysisDocuments : analysisStandard);
       toggle('areaOtherWrap', area.value === 'Otro');
       toggle('analysisOtherWrap', false);
+      renderDimensions();
       renderIndicators();
     }
 
@@ -251,18 +304,9 @@
     area.addEventListener('change', updateFlow);
     analysisType.addEventListener('change', () => toggle('analysisOtherWrap', analysisType.value === 'Otro'));
 
-    const dimChecks = [...document.querySelectorAll('#dimensions input[type="checkbox"]')];
-    dimChecks.forEach(cb => cb.addEventListener('change', () => {
-      const selected = dimChecks.filter(x => x.checked);
-      if (selected.length > 5) {
-        cb.checked = false;
-        document.getElementById('dimError').classList.add('show');
-        setTimeout(() => document.getElementById('dimError').classList.remove('show'), 2200);
-      }
-      document.getElementById('dimCounter').textContent = `${dimChecks.filter(x => x.checked).length}/5`;
-      const other = dimChecks.find(x => x.value === 'Otro');
-      toggle('dimensionOtherWrap', other.checked);
-    }));
+    dimensionOther.addEventListener('input', () => {
+      dimensionOtherValues[area.value] = dimensionOther.value;
+    });
 
     const scenarioOther = [...document.querySelectorAll('#scenarios input')].find(x => x.value === 'Otro');
     scenarioOther.addEventListener('change', () => toggle('scenarioOtherWrap', scenarioOther.checked));

@@ -2124,3 +2124,34 @@ footer {
         margin-top: 58px;
     }
 }
+
+/* MOINEM atributos: cubos decorativos azul eléctrico */
+#atributos {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+#atributos::before {
+    content: "";
+    position: absolute;
+    top: 82px;
+    right: clamp(24px, 5vw, 88px);
+    width: clamp(280px, 31vw, 520px);
+    aspect-ratio: 520 / 339;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.23;
+    background: url("../imagenes/moinem-cubos-electricos.png") center / contain no-repeat;
+}
+
+#atributos > * {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 760px) {
+    #atributos::before {
+        display: none;
+    }
+}

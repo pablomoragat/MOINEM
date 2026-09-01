@@ -2412,12 +2412,12 @@ footer {
 }
 
 .platform-video-frame video {
-    transform: scale(1.4);
+    transform: scale(1.54);
     transform-origin: 50% 50%;
 }
 
 @media (max-width: 620px) {
     .platform-video-frame video {
-        transform: scale(1.28);
+        transform: scale(1.4);
     }
 }

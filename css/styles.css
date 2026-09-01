@@ -2403,3 +2403,21 @@ footer {
         border-radius: 0;
     }
 }
+
+
+/* Zoom interno del video de demostracion */
+.platform-video-frame {
+    position: relative;
+    overflow: hidden;
+}
+
+.platform-video-frame video {
+    transform: scale(1.4);
+    transform-origin: 50% 50%;
+}
+
+@media (max-width: 620px) {
+    .platform-video-frame video {
+        transform: scale(1.28);
+    }
+}

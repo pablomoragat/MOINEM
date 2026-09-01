@@ -2421,3 +2421,52 @@ footer {
         transform: scale(1.4);
     }
 }
+
+
+/* =========================
+   CASOS DE USO: PALETA PASTEL
+========================= */
+
+.use-case-card {
+    --card-bg: #eef6ff;
+    --card-border: #bfdbfe;
+    --card-title: #1d4ed8;
+    --card-glow: rgba(37, 99, 235, 0.10);
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(255,255,255,0.72), var(--card-bg));
+    border-color: var(--card-border);
+    box-shadow: 0 8px 24px var(--card-glow);
+}
+
+.use-case-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 5px;
+    background: var(--card-title);
+    opacity: 0.72;
+}
+
+.use-case-card:nth-child(3n + 2) {
+    --card-bg: #f5f1ff;
+    --card-border: #ddd0fe;
+    --card-title: #6d3fc0;
+    --card-glow: rgba(109, 63, 192, 0.10);
+}
+
+.use-case-card:nth-child(3n) {
+    --card-bg: #ecfdf5;
+    --card-border: #b7ead4;
+    --card-title: #087a55;
+    --card-glow: rgba(8, 122, 85, 0.10);
+}
+
+.use-case-card h3 {
+    color: var(--card-title);
+}
+
+.use-case-card:hover {
+    border-color: var(--card-title);
+    box-shadow: 0 14px 32px var(--card-glow);
+    background: linear-gradient(145deg, rgba(255,255,255,0.58), var(--card-bg));
+}

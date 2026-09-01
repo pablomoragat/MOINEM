@@ -2470,3 +2470,56 @@ footer {
     box-shadow: 0 14px 32px var(--card-glow);
     background: linear-gradient(145deg, rgba(255,255,255,0.58), var(--card-bg));
 }
+
+
+/* =========================
+   INSIGHTS: PALETA PASTEL INVERSA
+========================= */
+
+.insights-grid article {
+    --insight-bg: #ecfdf5;
+    --insight-border: #b7ead4;
+    --insight-title: #087a55;
+    --insight-glow: rgba(8, 122, 85, 0.10);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(255,255,255,0.72), var(--insight-bg));
+    border-color: var(--insight-border);
+    box-shadow: 0 8px 24px var(--insight-glow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.insights-grid article::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 5px;
+    background: var(--insight-title);
+    opacity: 0.72;
+}
+
+.insights-grid article:nth-child(2) {
+    --insight-bg: #f5f1ff;
+    --insight-border: #ddd0fe;
+    --insight-title: #6d3fc0;
+    --insight-glow: rgba(109, 63, 192, 0.10);
+}
+
+.insights-grid article:nth-child(3) {
+    --insight-bg: #eef6ff;
+    --insight-border: #bfdbfe;
+    --insight-title: #1d4ed8;
+    --insight-glow: rgba(37, 99, 235, 0.10);
+}
+
+.insights-grid h3,
+.insights-grid a {
+    color: var(--insight-title);
+}
+
+.insights-grid article:hover {
+    transform: translateY(-3px);
+    border-color: var(--insight-title);
+    box-shadow: 0 14px 32px var(--insight-glow);
+    background: linear-gradient(145deg, rgba(255,255,255,0.58), var(--insight-bg));
+}

@@ -268,12 +268,12 @@ body::before {
 }
 
 .hero-brand h1 {
-    font-size: clamp(52px, 5.5vw, 82px);
+    font-size: clamp(46px, 4.8vw, 70px);
 }
 
 .hero-slogan {
-    margin-top: 18px;
-    font-size: 15px;
+    margin-top: 13px;
+    font-size: 13px;
     letter-spacing: 4px;
 }
 
@@ -281,15 +281,23 @@ body::before {
     display: none;
 }
 
+.hero-video-crop {
+    width: min(112%, 680px);
+    aspect-ratio: 16 / 9;
+    margin-top: 18px;
+    overflow: hidden;
+    border: 0;
+    background: transparent;
+}
+
 .hero-demo-video {
     display: block;
-    width: min(100%, 560px);
-    height: auto;
-    max-height: 285px;
-    margin-top: 32px;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.38);
+    transform-origin: 50% 50%;
     border: 0;
-    border-radius: 8px;
     background: transparent;
     box-shadow: none;
 }
@@ -1651,11 +1659,13 @@ footer {
         letter-spacing: 2.5px;
     }
 
-    .hero-demo-video {
+    .hero-video-crop {
         width: 100%;
-        max-height: none;
-        margin-top: 26px;
-        border-radius: 6px;
+        margin-top: 20px;
+    }
+
+    .hero-demo-video {
+        transform: scale(1.32);
     }
 
     .hero-content h2 {

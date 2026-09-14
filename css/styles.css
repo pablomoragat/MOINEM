@@ -1922,125 +1922,19 @@ footer {
         );
 }
 
-.moinem-agent-ecosystem {
-    width: 440px;
-    height: 440px;
+.moinem-core {
+    width: 250px;
+    height: 250px;
 
     position: relative;
     z-index: 3;
-}
-
-.agent-orbit {
-    position: absolute;
-    inset: 43px;
-
-    border: 1px solid rgba(37, 99, 235, 0.32);
-    border-radius: 50%;
-
-    box-shadow:
-        0 0 0 18px rgba(239, 246, 255, 0.52),
-        inset 0 0 34px rgba(37, 99, 235, 0.04);
-}
-
-.agent-orbit::before,
-.agent-orbit::after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.agent-orbit::before {
-    inset: 19px;
-    border: 1px dashed rgba(37, 99, 235, 0.20);
-}
-
-.agent-orbit::after {
-    width: 8px;
-    height: 8px;
-    top: -4px;
-    left: calc(50% - 4px);
-    background: #2563eb;
-    box-shadow: 0 0 14px rgba(37, 99, 235, 0.8);
-}
-
-.agent-specialist {
-    min-width: 112px;
-    min-height: 38px;
-
-    position: absolute;
-    z-index: 5;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 9px 15px;
-
-    color: #1e40af;
-    font-size: 12px;
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: 0.15px;
-    text-align: center;
-
-    border: 1px solid rgba(37, 99, 235, 0.30);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.98);
-
-    box-shadow:
-        0 9px 24px rgba(30, 64, 175, 0.12),
-        0 0 0 5px rgba(239, 246, 255, 0.72);
-}
-
-.agent-finance {
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.agent-commercial {
-    top: 105px;
-    right: -1px;
-}
-
-.agent-inventory {
-    right: 6px;
-    bottom: 92px;
-}
-
-.agent-operations {
-    bottom: 13px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.agent-risk {
-    bottom: 92px;
-    left: 6px;
-}
-
-.agent-director {
-    top: 105px;
-    left: -1px;
-}
-
-.moinem-core {
-    width: 190px;
-    height: 190px;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 4;
-    transform: translate(-50%, -50%);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    padding: 22px;
+    padding: 28px;
 
     text-align: center;
 
@@ -2050,8 +1944,10 @@ footer {
     background-color: rgba(255, 255, 255, 0.99);
 
     box-shadow:
-        0 20px 55px rgba(30, 64, 175, 0.16),
-        0 0 0 15px rgba(239, 246, 255, 0.84);
+        0 20px 55px
+        rgba(30, 64, 175, 0.13),
+        0 0 0 24px
+        rgba(239, 246, 255, 0.75);
 }
 
 .moinem-core::before {
@@ -2059,7 +1955,7 @@ footer {
 
     position: absolute;
 
-    inset: -30px;
+    inset: -48px;
 
     border:
         1px dashed
@@ -2071,8 +1967,8 @@ footer {
 }
 
 .moinem-core-logo {
-    width: 61px;
-    height: 61px;
+    width: 82px;
+    height: 82px;
 
     margin-bottom: 8px;
 
@@ -2086,7 +1982,7 @@ footer {
 .moinem-core strong {
     color: #0f172a;
 
-    font-size: 25px;
+    font-size: 31px;
     line-height: 1.05;
     letter-spacing: 1px;
 }
@@ -2096,7 +1992,7 @@ footer {
 
     color: #475569;
 
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.4;
 }
 
@@ -2175,8 +2071,18 @@ footer {
         gap: 18px;
     }
 
-    .moinem-agent-ecosystem {
-        transform: scale(0.88);
+    .moinem-core {
+        width: 220px;
+        height: 220px;
+    }
+
+    .moinem-core-logo {
+        width: 72px;
+        height: 72px;
+    }
+
+    .moinem-core strong {
+        font-size: 27px;
     }
 }
 
@@ -2202,7 +2108,7 @@ footer {
     }
 
     .moinem-core-area {
-        min-height: 440px;
+        min-height: 320px;
     }
 
     .flow-lines {
@@ -2233,85 +2139,21 @@ footer {
     }
 
     .moinem-core-area {
-        min-height: 370px;
-        overflow: hidden;
-    }
-
-    .moinem-agent-ecosystem {
-        width: 360px;
-        height: 360px;
-        flex: 0 0 360px;
-        transform: none;
-    }
-
-    .agent-orbit {
-        inset: 40px;
-    }
-
-    .agent-specialist {
-        min-width: 94px;
-        min-height: 34px;
-        padding: 8px 11px;
-        font-size: 10px;
-    }
-
-    .agent-finance {
-        top: 7px;
-    }
-
-    .agent-commercial,
-    .agent-director {
-        top: 82px;
-    }
-
-    .agent-commercial {
-        right: 0;
-    }
-
-    .agent-director {
-        left: 0;
-    }
-
-    .agent-inventory,
-    .agent-risk {
-        bottom: 76px;
-    }
-
-    .agent-inventory {
-        right: 0;
-    }
-
-    .agent-risk {
-        left: 0;
-    }
-
-    .agent-operations {
-        bottom: 5px;
+        min-height: 290px;
     }
 
     .moinem-core {
-        width: 154px;
-        height: 154px;
-        padding: 17px;
-    }
-
-    .moinem-core::before {
-        inset: -23px;
+        width: 205px;
+        height: 205px;
     }
 
     .moinem-core-logo {
-        width: 46px;
-        height: 46px;
-        margin-bottom: 5px;
+        width: 68px;
+        height: 68px;
     }
 
     .moinem-core strong {
-        font-size: 21px;
-    }
-
-    .moinem-core span {
-        margin-top: 5px;
-        font-size: 8.5px;
+        font-size: 25px;
     }
 
     .control-layer {

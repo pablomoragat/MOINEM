@@ -184,11 +184,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         /* Sello temporal PYME: retirar este bloque junto con el enlace del hero al cerrar el piloto. */
         .pyme-stamp {
-            position: absolute;
-            right: 5%;
-            bottom: 12px;
+            position: relative;
+            align-self: flex-end;
             z-index: 3;
-            width: min(245px, 58%);
+            width: min(245px, 85%);
+            margin: 14px 11% 8px 0;
             padding: 13px 16px;
             transform: rotate(-8deg);
             border: 2px solid #1d4ed8;
@@ -209,7 +209,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .pyme-stamp strong { font-size: 16px; color: #1d4ed8; }
         .pyme-stamp span { margin-top: 4px; font-size: 13px; }
         @media (max-width: 760px) {
-            .pyme-stamp { right: 4%; bottom: 10px; width: min(215px, 62%); padding: 10px 12px; }
+            .pyme-stamp { width: min(215px, 84%); margin: 16px 5% 0 0; padding: 10px 12px; }
             .pyme-stamp strong { font-size: 14px; }
             .pyme-stamp span { font-size: 12px; }
         }

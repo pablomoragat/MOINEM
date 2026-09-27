@@ -220,6 +220,21 @@ body::before {
     color: #0f172a;
 }
 
+.hero-brand-name {
+    display: block;
+}
+
+.hero-seo-kicker {
+    display: block;
+    margin-top: 12px;
+    font-size: clamp(14px, 1.45vw, 20px);
+    line-height: 1.25;
+    letter-spacing: 1.8px;
+    font-weight: 700;
+    color: #2563eb;
+    text-transform: uppercase;
+}
+
 .hero-slogan {
     margin: 28px 0 0;
 

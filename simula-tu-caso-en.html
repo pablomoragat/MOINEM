@@ -1,126 +1,126 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MOINEM | Simula tu caso</title>
+  <title>MOINEM | Explore your use case</title>
   <link rel="stylesheet" href="css/simula-tu-caso.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Volver a MOINEM">
+    <a class="brand" href="index-en.html" aria-label="Back to MOINEM">
       <img class="brand-logo" src="imagenes/logo/moinem_logo_light3.jpg" alt="MOINEM">
-      <span class="brand-text"><strong>MOINEM</strong><span>Motor de Inteligencia Empresarial</span></span>
+      <span class="brand-text"><strong>MOINEM</strong><span>Enterprise Intelligence Engine</span></span>
     </a>
     <div style="display:flex;align-items:center;gap:18px">
-      <span style="font-size:12px;font-weight:700;color:#64748b"><strong style="color:#2563eb">ES</strong> | <a href="simula-tu-caso-en.html" style="color:#64748b;text-decoration:none">EN</a></span>
-      <a class="back-link" href="index.html">← Volver al inicio</a>
+      <span style="font-size:12px;font-weight:700;color:#64748b"><a href="simula-tu-caso.html" style="color:#64748b;text-decoration:none">ES</a> | <strong style="color:#2563eb">EN</strong></span>
+      <a class="back-link" href="index-en.html">← Back to home</a>
     </div>
   </header>
 
   <main>
     <section class="intro">
-      <p class="eyebrow">DEMOSTRACIÓN</p>
-      <h1>Simula tu caso</h1>
-      <p class="lead">Selecciona las opciones que mejor representan tu necesidad. MOINEM utilizará esta información para estructurar tu caso de análisis.</p>
+      <p class="eyebrow">DEMO</p>
+      <h1>Explore your use case</h1>
+      <p class="lead">Select the options that best represent your needs. MOINEM will use this information to structure your analysis use case.</p>
     </section>
 
     <form id="caseForm" class="form-shell" novalidate>
       <section class="section">
-        <div class="section-title"><span class="number">1</span><div><h2>Área / Tipo de caso</h2><p class="helper">Selecciona el área principal que quieres analizar.</p></div></div>
+        <div class="section-title"><span class="number">1</span><div><h2>Business area / Use case type</h2><p class="helper">Select the main business area you want to analyze.</p></div></div>
         <select id="area" required>
-          <option value="">Selecciona una opción...</option>
-          <option>Comercial</option>
-          <option>Finanzas</option>
-          <option>Operaciones</option>
-          <option>RRHH</option>
-          <option>Documentos</option>
-          <option>Otro</option>
+          <option value="">Select an option...</option>
+          <option>Sales</option>
+          <option>Finance</option>
+          <option>Operations</option>
+          <option>HR</option>
+          <option>Documents</option>
+          <option>Other</option>
         </select>
-        <div id="areaOtherWrap" class="other-field"><input id="areaOther" type="text" placeholder="Especifica el tipo de caso"></div>
+        <div id="areaOtherWrap" class="other-field"><input id="areaOther" type="text" placeholder="Specify the use case"></div>
       </section>
 
       <div id="standardFlow">
         <section class="section">
-          <div class="section-title"><span class="number">2</span><div><h2>Dimensiones a analizar <span id="dimCounter" class="counter">0/5</span></h2><p class="helper">Selecciona hasta 5 dimensiones.</p></div></div>
+          <div class="section-title"><span class="number">2</span><div><h2>Dimensions to analyze <span id="dimCounter" class="counter">0/5</span></h2><p class="helper">Select up to 5 dimensions.</p></div></div>
           <div id="dimensions" class="checks">
-            <div class="check"><input type="checkbox" id="d1" value="Producto"><label for="d1">Producto</label></div>
-            <div class="check"><input type="checkbox" id="d2" value="Cliente"><label for="d2">Cliente</label></div>
-            <div class="check"><input type="checkbox" id="d3" value="Canal"><label for="d3">Canal</label></div>
-            <div class="check"><input type="checkbox" id="d4" value="País"><label for="d4">País</label></div>
-            <div class="check"><input type="checkbox" id="d5" value="Sucursal"><label for="d5">Sucursal</label></div>
-            <div class="check"><input type="checkbox" id="d6" value="Mes"><label for="d6">Mes</label></div>
-            <div class="check"><input type="checkbox" id="d7" value="Ejecutivo"><label for="d7">Ejecutivo</label></div>
-            <div class="check"><input type="checkbox" id="d8" value="Otro"><label for="d8">Otro</label></div>
+            <div class="check"><input type="checkbox" id="d1" value="Product"><label for="d1">Product</label></div>
+            <div class="check"><input type="checkbox" id="d2" value="Customer"><label for="d2">Customer</label></div>
+            <div class="check"><input type="checkbox" id="d3" value="Channel"><label for="d3">Channel</label></div>
+            <div class="check"><input type="checkbox" id="d4" value="Country"><label for="d4">Country</label></div>
+            <div class="check"><input type="checkbox" id="d5" value="Branch"><label for="d5">Branch</label></div>
+            <div class="check"><input type="checkbox" id="d6" value="Month"><label for="d6">Month</label></div>
+            <div class="check"><input type="checkbox" id="d7" value="Account manager"><label for="d7">Account manager</label></div>
+            <div class="check"><input type="checkbox" id="d8" value="Other"><label for="d8">Other</label></div>
           </div>
-          <div id="dimensionOtherWrap" class="other-field"><input id="dimensionOther" type="text" placeholder="Escribe la dimensión"></div>
-          <p id="dimError" class="error">Puedes seleccionar un máximo de 5 dimensiones.</p>
+          <div id="dimensionOtherWrap" class="other-field"><input id="dimensionOther" type="text" placeholder="Enter the dimension"></div>
+          <p id="dimError" class="error">You can select a maximum of 5 dimensions.</p>
         </section>
 
         <section class="section">
-          <div class="section-title"><span class="number">3</span><div><h2>Escenario</h2><p class="helper">Selecciona uno o más escenarios de comparación.</p></div></div>
+          <div class="section-title"><span class="number">3</span><div><h2>Scenario</h2><p class="helper">Select one or more comparison scenarios.</p></div></div>
           <div id="scenarios" class="checks">
             <div class="check"><input type="checkbox" id="s1" value="Actual"><label for="s1">Actual</label></div>
-            <div class="check"><input type="checkbox" id="s2" value="Presupuesto"><label for="s2">Presupuesto</label></div>
+            <div class="check"><input type="checkbox" id="s2" value="Budget"><label for="s2">Budget</label></div>
             <div class="check"><input type="checkbox" id="s3" value="Forecast"><label for="s3">Forecast</label></div>
-            <div class="check"><input type="checkbox" id="s4" value="Año anterior"><label for="s4">Año anterior</label></div>
-            <div class="check"><input type="checkbox" id="s5" value="Otro"><label for="s5">Otro</label></div>
+            <div class="check"><input type="checkbox" id="s4" value="Prior year"><label for="s4">Prior year</label></div>
+            <div class="check"><input type="checkbox" id="s5" value="Other"><label for="s5">Other</label></div>
           </div>
-          <div id="scenarioOtherWrap" class="other-field"><input id="scenarioOther" type="text" placeholder="Escribe el escenario"></div>
+          <div id="scenarioOtherWrap" class="other-field"><input id="scenarioOther" type="text" placeholder="Enter the scenario"></div>
         </section>
 
         <section class="section">
-          <div class="section-title"><span class="number">4</span><div><h2>Indicadores</h2><p class="helper">Las opciones cambian según el área seleccionada.</p></div></div>
+          <div class="section-title"><span class="number">4</span><div><h2>Metrics</h2><p class="helper">Options change based on the selected area.</p></div></div>
           <div id="indicators" class="checks"></div>
-          <div id="indicatorOtherWrap" class="other-field"><input id="indicatorOther" type="text" placeholder="Escribe el indicador"></div>
+          <div id="indicatorOtherWrap" class="other-field"><input id="indicatorOther" type="text" placeholder="Enter the metric"></div>
         </section>
       </div>
 
       <div id="documentFlow" class="hidden">
         <section class="section">
-          <div class="section-title"><span class="number">2</span><div><h2>Tipo de documento</h2><p class="helper">Selecciona el tipo de documento que deseas analizar.</p></div></div>
+          <div class="section-title"><span class="number">2</span><div><h2>Document type</h2><p class="helper">Select the type of document you want to analyze.</p></div></div>
           <div id="documentTypes" class="checks">
-            <div class="check"><input type="checkbox" id="doc1" value="Contrato"><label for="doc1">Contrato</label></div>
-            <div class="check"><input type="checkbox" id="doc2" value="Factura"><label for="doc2">Factura</label></div>
-            <div class="check"><input type="checkbox" id="doc3" value="Informe"><label for="doc3">Informe</label></div>
+            <div class="check"><input type="checkbox" id="doc1" value="Contract"><label for="doc1">Contract</label></div>
+            <div class="check"><input type="checkbox" id="doc2" value="Invoice"><label for="doc2">Invoice</label></div>
+            <div class="check"><input type="checkbox" id="doc3" value="Report"><label for="doc3">Report</label></div>
             <div class="check"><input type="checkbox" id="doc4" value="CV"><label for="doc4">CV</label></div>
-            <div class="check"><input type="checkbox" id="doc5" value="Bases de licitación"><label for="doc5">Bases de licitación</label></div>
-            <div class="check"><input type="checkbox" id="doc6" value="Políticas / Procedimientos"><label for="doc6">Políticas / Procedimientos</label></div>
-            <div class="check"><input type="checkbox" id="doc7" value="Otro"><label for="doc7">Otro</label></div>
+            <div class="check"><input type="checkbox" id="doc5" value="Tender documents"><label for="doc5">Tender documents</label></div>
+            <div class="check"><input type="checkbox" id="doc6" value="Policies / Procedures"><label for="doc6">Policies / Procedures</label></div>
+            <div class="check"><input type="checkbox" id="doc7" value="Other"><label for="doc7">Other</label></div>
           </div>
-          <div id="documentOtherWrap" class="other-field"><input id="documentOther" type="text" placeholder="Escribe el tipo de documento"></div>
+          <div id="documentOtherWrap" class="other-field"><input id="documentOther" type="text" placeholder="Enter the document type"></div>
         </section>
       </div>
 
       <section class="section">
-        <div class="section-title"><span id="analysisNumber" class="number">5</span><div><h2>¿Qué buscas responder?</h2><p class="helper">Selecciona el tipo de análisis que necesitas. Puedes completar este punto o escribir directamente tu pregunta en el siguiente.</p></div></div>
+        <div class="section-title"><span id="analysisNumber" class="number">5</span><div><h2>What do you want to answer?</h2><p class="helper">Select the type of analysis you need. You can complete this step or type your question directly below.</p></div></div>
         <select id="analysisType"></select>
-        <div id="analysisOtherWrap" class="other-field"><input id="analysisOther" type="text" placeholder="Especifica el tipo de análisis"></div>
+        <div id="analysisOtherWrap" class="other-field"><input id="analysisOther" type="text" placeholder="Specify the analysis type"></div>
       </section>
 
       <section class="section">
-        <div class="section-title"><span id="questionNumber" class="number">6</span><div><h2>Tu pregunta</h2><p class="helper">Escribe la pregunta concreta que quieres resolver. Este campo es opcional si ya seleccionaste el tipo de análisis anterior.</p></div></div>
-        <textarea id="question" placeholder="Ej.: ¿Qué productos explican la caída del margen en Chile versus presupuesto?"></textarea>
-        <p id="formError" class="error">Selecciona un área y completa al menos el tipo de análisis o tu pregunta.</p>
+        <div class="section-title"><span id="questionNumber" class="number">6</span><div><h2>Your question</h2><p class="helper">Type the specific question you want to answer. This field is optional if you already selected an analysis type above.</p></div></div>
+        <textarea id="question" placeholder="e.g. Which products explain the margin decline in Chile versus budget?"></textarea>
+        <p id="formError" class="error">Select an area and complete at least the analysis type or your question.</p>
       </section>
 
-      <div class="actions"><button class="primary" type="submit">SIMULAR MI CASO</button></div>
+      <div class="actions"><button class="primary" type="submit">EXPLORE MY USE CASE</button></div>
     </form>
 
-    <p class="test-note">La información enviada se utilizará únicamente para revisar tu caso y contactarte.</p>
+    <p class="test-note">Submitted information will only be used to review your case and contact you.</p>
   </main>
 
   <div id="contactModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-card">
-      <h2 id="modalTitle">Último paso</h2>
-      <p>Ingresa tus datos para asociarlos a la simulación.</p>
-      <div class="field"><label for="userName">Nombre</label><input id="userName" type="text" autocomplete="name" placeholder="Tu nombre"></div>
+      <h2 id="modalTitle">Final step</h2>
+      <p>Enter your details so we can associate them with the simulation.</p>
+      <div class="field"><label for="userName">Name</label><input id="userName" type="text" autocomplete="name" placeholder="Your name"></div>
       <div class="field"><label for="userEmail">Email</label><input id="userEmail" type="email" autocomplete="email" placeholder="nombre@empresa.cl"></div>
-      <p id="contactError" class="error">Ingresa un nombre y un email con formato válido.</p>
+      <p id="contactError" class="error">Enter your name and a valid email address.</p>
       <div id="submitStatus" class="status" aria-live="polite"></div>
       <div class="modal-actions">
-        <button id="cancelModal" type="button" class="secondary">Volver</button>
-        <button id="sendCase" type="button" class="primary">ENVIAR CASO</button>
+        <button id="cancelModal" type="button" class="secondary">Back</button>
+        <button id="sendCase" type="button" class="primary">SEND CASE</button>
       </div>
     </div>
   </div>
@@ -142,18 +142,18 @@
     const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const dimensionMap = {
-      RRHH: ['Área','Cargo','Centro de costo','Ubicación o sucursal','Tipo de contrato','Fecha de ingreso','Fecha de salida','Antigüedad','Jefatura o supervisor','Otro'],
-      default: ['Producto','Cliente','Canal','País','Sucursal','Mes','Ejecutivo','Otro']
+      HR: ['Area','Role','Cost center','Location or branch','Contract type','Hire date','Exit date','Tenure','Manager or supervisor','Other'],
+      default: ['Product','Customer','Channel','Country','Branch','Month','Account manager','Other']
     };
     const indicatorMap = {
-      Comercial: ['Ventas','Margen','Volumen','Precio promedio','Costo','Otro'],
-      Finanzas: ['Ingresos','EBITDA','Gastos','Flujo de caja','Variación presupuesto','Otro'],
-      Operaciones: ['Producción','Eficiencia','Tiempo de ciclo','Scrap / Merma','Costo operativo','Otro'],
-      RRHH: ['Dotación','Remuneración','Costo laboral','Nuevas contrataciones','Salidas','Rotación','Ausentismo','Licencias médicas','Vacaciones','Antigüedad promedio','Horas extraordinarias','Otro'],
-      Otro: ['Indicador principal','Otro']
+      Sales: ['Sales','Margin','Volume','Average price','Cost','Other'],
+      Finance: ['Revenue','EBITDA','Expenses','Cash flow','Budget variance','Other'],
+      Operations: ['Production','Efficiency','Cycle time','Scrap / Waste','Operating cost','Other'],
+      HR: ['Headcount','Compensation','Labor cost','New hires','Exits','Turnover','Absenteeism','Medical leave','Vacation','Average tenure','Overtime','Other'],
+      Other: ['Primary metric','Other']
     };
-    const analysisStandard = ['', 'Resumen','Comparar','Ranking','Detectar desviaciones','Explicar causas','Tendencia','Todas las anteriores','Otro'];
-    const analysisDocuments = ['', 'Resumir','Comparar documentos','Buscar información','Detectar diferencias','Extraer datos','Evaluar cumplimiento','Otro'];
+    const analysisStandard = ['', 'Summary','Compare','Ranking','Detect deviations','Explain drivers','Trend','All of the above','Other'];
+    const analysisDocuments = ['', 'Summarize','Compare documents','Find information','Detect differences','Extract data','Assess compliance','Other'];
 
     function toggle(id, show) {
       document.getElementById(id).classList.toggle('show', !!show);
@@ -164,7 +164,7 @@
       values.forEach((value, index) => {
         const option = document.createElement('option');
         option.value = value;
-        option.textContent = index === 0 ? 'Selecciona una opción...' : value;
+        option.textContent = index === 0 ? 'Select an option...' : value;
         select.appendChild(option);
       });
     }
@@ -201,7 +201,7 @@
             .map(item => item.value);
           document.getElementById('dimCounter').textContent =
             `${dimensionSelections[area.value].length}/5`;
-          const other = currentChecks.find(item => item.value === 'Otro');
+          const other = currentChecks.find(item => item.value === 'Other');
           toggle('dimensionOtherWrap', !!other?.checked);
         });
       });
@@ -209,7 +209,7 @@
       document.getElementById('dimCounter').textContent =
         `${[...dimensions.querySelectorAll('input:checked')].length}/5`;
       dimensionOther.value = dimensionOtherValues[area.value] || '';
-      const other = [...dimensions.querySelectorAll('input')].find(item => item.value === 'Otro');
+      const other = [...dimensions.querySelectorAll('input')].find(item => item.value === 'Other');
       toggle('dimensionOtherWrap', !!other?.checked);
     }
 
@@ -227,19 +227,19 @@
         label.textContent = value;
         wrapper.append(input, label);
         indicators.appendChild(wrapper);
-        if (value === 'Otro') input.addEventListener('change', () => toggle('indicatorOtherWrap', input.checked));
+        if (value === 'Other') input.addEventListener('change', () => toggle('indicatorOtherWrap', input.checked));
       });
       toggle('indicatorOtherWrap', false);
     }
 
     function updateFlow() {
-      const docs = area.value === 'Documentos';
+      const docs = area.value === 'Documents';
       standardFlow.classList.toggle('hidden', docs);
       documentFlow.classList.toggle('hidden', !docs);
       document.getElementById('analysisNumber').textContent = docs ? '3' : '5';
       document.getElementById('questionNumber').textContent = docs ? '4' : '6';
       setSelectOptions(analysisType, docs ? analysisDocuments : analysisStandard);
-      toggle('areaOtherWrap', area.value === 'Otro');
+      toggle('areaOtherWrap', area.value === 'Other');
       toggle('analysisOtherWrap', false);
       renderDimensions();
       renderIndicators();
@@ -253,49 +253,49 @@
 
     function replaceOther(values, otherValue) {
       const detail = otherValue.trim();
-      return values.map(value => value === 'Otro' && detail ? `Otro: ${detail}` : value);
+      return values.map(value => value === 'Other' && detail ? `Other: ${detail}` : value);
     }
 
     function formatList(values) {
-      return values.length ? values.join(', ') : 'No seleccionado';
+      return values.length ? values.join(', ') : 'Not selected';
     }
 
     function buildCasePayload(name, email) {
-      const docs = area.value === 'Documentos';
+      const docs = area.value === 'Documents';
       const areaOther = document.getElementById('areaOther').value.trim();
-      const resolvedArea = area.value === 'Otro' && areaOther ? `Otro: ${areaOther}` : area.value;
+      const resolvedArea = area.value === 'Other' && areaOther ? `Other: ${areaOther}` : area.value;
       const analysisOther = document.getElementById('analysisOther').value.trim();
-      const resolvedAnalysis = analysisType.value === 'Otro' && analysisOther ? `Otro: ${analysisOther}` : (analysisType.value || 'No seleccionado');
-      const question = document.getElementById('question').value.trim() || 'No ingresada';
+      const resolvedAnalysis = analysisType.value === 'Other' && analysisOther ? `Other: ${analysisOther}` : (analysisType.value || 'Not selected');
+      const question = document.getElementById('question').value.trim() || 'Not provided';
 
       const payload = {
-        _subject: `Nuevo caso MOINEM | ${resolvedArea}`,
+        _subject: `New MOINEM case | ${resolvedArea}`,
         _template: 'table',
         _replyto: email,
-        Nombre: name,
+        Name: name,
         Email: email,
-        'Área / Tipo de caso': resolvedArea,
-        'Tipo de análisis / Qué busca responder': resolvedAnalysis,
-        Pregunta: question,
-        'Fecha de envío': new Date().toLocaleString('es-CL'),
+        'Business area / Use case type': resolvedArea,
+        'Analysis type / What the user wants to answer': resolvedAnalysis,
+        Question: question,
+        'Submission date': new Date().toLocaleString('en-US'),
         Origen: window.location.href
       };
 
       if (docs) {
-        payload['Tipo de documento'] = formatList(replaceOther(
+        payload['Document type'] = formatList(replaceOther(
           checkedValues('#documentTypes input[type="checkbox"]'),
           document.getElementById('documentOther').value
         ));
       } else {
-        payload.Dimensiones = formatList(replaceOther(
+        payload.Dimensions = formatList(replaceOther(
           checkedValues('#dimensions input[type="checkbox"]'),
           document.getElementById('dimensionOther').value
         ));
-        payload.Escenarios = formatList(replaceOther(
+        payload.Scenarios = formatList(replaceOther(
           checkedValues('#scenarios input[type="checkbox"]'),
           document.getElementById('scenarioOther').value
         ));
-        payload.Indicadores = formatList(replaceOther(
+        payload.Metrics = formatList(replaceOther(
           checkedValues('#indicators input[type="checkbox"]'),
           document.getElementById('indicatorOther').value
         ));
@@ -305,16 +305,16 @@
     }
 
     area.addEventListener('change', updateFlow);
-    analysisType.addEventListener('change', () => toggle('analysisOtherWrap', analysisType.value === 'Otro'));
+    analysisType.addEventListener('change', () => toggle('analysisOtherWrap', analysisType.value === 'Other'));
 
     dimensionOther.addEventListener('input', () => {
       dimensionOtherValues[area.value] = dimensionOther.value;
     });
 
-    const scenarioOther = [...document.querySelectorAll('#scenarios input')].find(x => x.value === 'Otro');
+    const scenarioOther = [...document.querySelectorAll('#scenarios input')].find(x => x.value === 'Other');
     scenarioOther.addEventListener('change', () => toggle('scenarioOtherWrap', scenarioOther.checked));
 
-    const docOther = [...document.querySelectorAll('#documentTypes input')].find(x => x.value === 'Otro');
+    const docOther = [...document.querySelectorAll('#documentTypes input')].find(x => x.value === 'Other');
     docOther.addEventListener('change', () => toggle('documentOtherWrap', docOther.checked));
 
     document.getElementById('caseForm').addEventListener('submit', event => {
@@ -327,7 +327,7 @@
       if (!valid) return;
 
       sendCase.disabled = false;
-      sendCase.textContent = 'ENVIAR CASO';
+      sendCase.textContent = 'SEND CASE';
       status.className = 'status';
       status.textContent = '';
       modal.classList.add('show');
@@ -350,9 +350,9 @@
 
       error.classList.remove('show');
       sendCase.disabled = true;
-      sendCase.textContent = 'ENVIANDO...';
+      sendCase.textContent = 'SENDING...';
       status.className = 'status show warn';
-      status.textContent = 'Enviando tu caso...';
+      status.textContent = 'Sending your use case...';
 
       try {
         const response = await fetch('https://formsubmit.co/ajax/contacto@moinem.cl', {
@@ -366,18 +366,18 @@
 
         const data = await response.json().catch(() => ({}));
         if (!response.ok || data.success === false || data.success === 'false') {
-          throw new Error(data.message || 'No fue posible enviar el caso');
+          throw new Error(data.message || 'Unable to send the use case');
         }
 
         status.className = 'status show success';
-        status.textContent = 'Caso enviado correctamente. Te contactaremos para revisar la información.';
-        sendCase.textContent = 'CASO ENVIADO';
+        status.textContent = 'Use case sent successfully. We will contact you to review the information.';
+        sendCase.textContent = 'CASE SENT';
       } catch (sendError) {
         console.error(sendError);
         status.className = 'status show warn';
-        status.textContent = 'No pudimos enviar el caso en este momento. Puedes escribirnos a contacto@moinem.cl.';
+        status.textContent = 'We could not send your use case right now. You can email us at contacto@moinem.cl.';
         sendCase.disabled = false;
-        sendCase.textContent = 'REINTENTAR';
+        sendCase.textContent = 'TRY AGAIN';
       }
     });
 

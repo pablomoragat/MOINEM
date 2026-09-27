@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
 <!-- Google Tag Manager -->
@@ -13,7 +13,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MOINEM - Motor de Inteligencia Empresarial</title>
+    <title>MOINEM - Enterprise Intelligence Engine</title>
 
     <link rel="stylesheet" href="css/styles.css">
 
@@ -58,7 +58,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             text-transform: uppercase;
         }
 
-        /* Contacto en dos columnas: personas a la izquierda, conversación a la derecha */
+        /* Contact en dos columnas: personas a la izquierda, conversación a la derecha */
         .contact-section {
             display: grid;
             grid-template-columns: minmax(280px, 36%) minmax(0, 64%);
@@ -269,6 +269,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .moinem-whatsapp-link { flex-basis: 52px; width: 52px; height: 52px; }
         }
 </style>
+
+<style id="moinem-en-demo-preview">
+.en-demo-animation{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:18px;background:#f8fbff;color:#12274a;font-family:Arial,Helvetica,sans-serif;box-shadow:inset 0 0 0 1px rgba(59,130,246,.14)}
+.en-demo-animation:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.06) 1px,transparent 1px);background-size:54px 54px}
+.en-scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7% 8%;opacity:0;animation:enScene 16s infinite}
+.en-scene:nth-child(1){animation-delay:0s}.en-scene:nth-child(2){animation-delay:2s}.en-scene:nth-child(3){animation-delay:4s}.en-scene:nth-child(4){animation-delay:6s}.en-scene:nth-child(5){animation-delay:8s}.en-scene:nth-child(6){animation-delay:10s}.en-scene:nth-child(7){animation-delay:12s}.en-scene:nth-child(8){animation-delay:14s}
+@keyframes enScene{0%,10.5%{opacity:1;transform:scale(1)}12.5%,100%{opacity:0;transform:scale(1.012)}}
+.en-kicker{font-size:clamp(10px,1.25vw,18px);font-weight:800;letter-spacing:.16em;color:#2563eb;margin-bottom:1.1em}
+.en-scene strong{font-size:clamp(18px,3.3vw,48px);line-height:1.08;color:#12274a}
+.en-scene strong em{font-style:normal;color:#2563eb}.en-scene small{font-size:clamp(10px,1.35vw,20px);color:#475569;margin-top:1.2em}
+.en-bullets{display:grid;grid-template-columns:1fr 1fr;gap:.55em 1.1em;margin-top:1.15em;font-size:clamp(10px,1.25vw,19px);color:#334155}.en-bullets span:before{content:"•";color:#0ea5e9;font-weight:900;margin-right:.45em}
+.en-bullets.compact{margin-top:.75em}.en-query{margin-top:1.25em;padding:.7em 1.1em;border:1px solid #bfdbfe;border-radius:14px;background:white;font-size:clamp(10px,1.35vw,20px);color:#1e293b}
+.en-stack{display:grid;gap:.5em;margin-top:1.1em;width:min(90%,760px)}.en-stack span{padding:.55em .8em;border:1px solid #dbeafe;border-radius:12px;background:white;font-size:clamp(9px,1.15vw,17px);color:#334155}
+.en-bridge{width:min(88%,760px);height:auto;margin-top:1.1em}.en-bridge path{fill:none;stroke:#2563eb;stroke-linecap:round}.en-bridge .deck,.en-bridge .tower{stroke-width:7}.en-bridge .cable{stroke-width:4}.en-bridge .hang{stroke-width:2}.en-bridge text{font:700 19px Arial,Helvetica,sans-serif;fill:#2563eb}
+.hero-video-crop .en-demo-animation{height:100%;min-height:100%}.platform-video-frame .en-demo-animation{border-radius:10px}
+@media(max-width:700px){.en-demo-animation{border-radius:12px}.en-scene{padding:6%}.en-bullets{gap:.35em .6em}.en-bridge text{font-size:16px}}
+</style>
+
 </head>
 
 <body>
@@ -284,7 +302,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <a class="brand"
        href="#inicio"
-       aria-label="Ir al inicio de MOINEM">
+       aria-label="Go to MOINEM home">
 
         <img
             src="imagenes/logo/moinem_logo_light3.jpg"
@@ -300,24 +318,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </a>
 
-    <nav class="main-nav" aria-label="Navegación principal">
-        <a href="#inicio">Inicio</a>
-        <a href="#atributos">Atributos</a>
-        <a href="#casos-uso">Casos de uso</a>
+    <nav class="main-nav" aria-label="Main navigation">
+        <a href="#inicio">Home</a>
+        <a href="#atributos">Capabilities</a>
+        <a href="#casos-uso">Use Cases</a>
         <a href="#insights">Insights</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#contacto">Contact</a>
     </nav>
 
-    <div class="language-selector" aria-label="Selector de idioma">
+    <div class="language-selector" aria-label="Language selector">
 
-        <button class="language active"
+        <button class="language"
                 type="button"
-                title="Español"
+                title="Spanish"
                 onclick="window.location.href='index.html'">ES</button>
 
         <span>|</span>
 
-        <button class="language"
+        <button class="language active"
                 type="button"
                 title="English"
                 onclick="window.location.href='index-en.html'">EN</button>
@@ -340,38 +358,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h1>MOINEM</h1>
 
         <p class="hero-slogan">
-            INTELIGENCIA QUE<br>
-            IMPULSA DECISIONES
+            INTELLIGENCE THAT<br>
+            DRIVES DECISIONS
         </p>
 
-        <div class="hero-video-crop">
-            <video class="hero-demo-video" autoplay muted loop playsinline preload="metadata" aria-label="Demostración de MOINEM en funcionamiento">
-                <source src="videos/demo_moinem.mp4" type="video/mp4">
-                Tu navegador no admite la reproducción de video.
-            </video>
-        </div>
+        <div class="hero-video-crop"><div class="en-demo-animation" aria-label="MOINEM English demo">
+    <div class="en-scene en-s1"><span class="en-kicker">MOINEM</span><strong>Intelligence That<br>Drives Decisions</strong><small>Enterprise Intelligence Engine</small></div>
+    <div class="en-scene en-s2"><span class="en-kicker">THE CHALLENGE</span><strong>More data.<br>More reports.<br><em>More questions.</em></strong><small>Insight still takes too long to reach the decision-maker.</small></div>
+    <div class="en-scene en-s3"><span class="en-kicker">TRADITIONAL ANALYSIS</span><strong>Fragmented and slow</strong><div class="en-bullets"><span>Multiple files</span><span>Manual work</span><span>Delayed answers</span><span>Limited scalability</span></div></div>
+    <div class="en-scene en-s4"><span class="en-kicker">THE BRIDGE</span><strong><em>MOINEM bridges the gap</em><br>between data and decisions</strong><small>A bridge from questions to answers</small>
+        <svg class="en-bridge" viewBox="0 0 700 190" aria-hidden="true"><path d="M50 155 H650" class="deck"/><path d="M170 155 V55 M530 155 V55" class="tower"/><path d="M50 120 Q350 5 650 120" class="cable"/><path d="M95 103V155 M140 86V155 M215 54V155 M260 39V155 M305 30V155 M350 27V155 M395 30V155 M440 39V155 M485 54V155 M560 86V155 M605 103V155" class="hang"/><text x="10" y="176">DATA</text><text x="585" y="176">DECISIONS</text></svg>
+    </div>
+    <div class="en-scene en-s5"><span class="en-kicker">ASK MOINEM</span><strong>Ask business questions<br><em>in natural language</em></strong><div class="en-query">“What explains the sales gap vs budget?”</div><small>Get clear, structured answers.</small></div>
+    <div class="en-scene en-s6"><span class="en-kicker">GO DEEPER. FASTER.</span><strong>Turn business questions into analysis</strong><div class="en-stack"><span>Which products are driving margin decline?</span><span>How did volume evolve by market?</span><span>What changed versus last month?</span></div></div>
+    <div class="en-scene en-s7"><span class="en-kicker">FROM INSIGHT TO ACTION</span><strong>From questions <em>to answers</em><br>From answers <em>to action</em></strong></div>
+    <div class="en-scene en-s8"><span class="en-kicker">BUILT FOR CONTROL & TRUST</span><strong>MOINEM</strong><div class="en-bullets compact"><span>100% On-Premise</span><span>Your data stays under control</span><span>No black boxes</span><span>Traceability & governance</span></div><small>Turn your data into decisions.</small></div>
+</div></div>
 
 
-        <a class="pyme-stamp" href="simula-tu-caso.html" aria-label="¿Tienes una PYME? Prueba MOINEM gratis. Simula tu caso y escribe Soy PYME.">
-            <strong>¿Tienes una PYME?<br>Prueba MOINEM gratis.</strong>
-            <span>Simula tu caso y escribe<br><b>“Soy PYME”</b>.</span>
+        <a class="pyme-stamp" href="simula-tu-caso-en.html" aria-label="Do you run an SME? Try MOINEM free. Explore your use case and write I run an SME.">
+            <strong>Do you run an SME?<br>Try MOINEM free.</strong>
+            <span>Explore your use case and write<br><b>“I run an SME”</b>.</span>
         </a>
     </div>
 
     <div class="hero-content">
 
         <h2>
-            <span>Motor de Inteligencia</span>
+            <span>Enterprise Intelligence</span>
             <br>
-            <span>Empresarial</span>
+            <span>Engine</span>
         </h2>
 
         <p class="hero-intro" style="margin-bottom: 10px; font-weight: 700; color: #334155;">
-            Detecta qué está cambiando en tu empresa, explica por qué ocurre y prioriza dónde actuar.
+            See what is changing in your business, understand why it is happening, and prioritize where to act.
         </p>
 
         <p class="hero-intro">
-            MOINEM transforma tus datos y reglas de negocio en análisis confiables, dentro de tu infraestructura y sin exponer información a terceros.
+            MOINEM turns your data and business rules into reliable analysis, within your own infrastructure and without exposing information to third parties.
         </p>
 
         <div class="value-accordion">
@@ -384,8 +408,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </summary>
 
                 <div class="value-detail">
-                    Instalado 100 % dentro de la infraestructura
-                    de tu organización.
+                    Deployed 100% within your organization’s own
+                    infrastructure.
                 </div>
 
             </details>
@@ -393,14 +417,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <details class="value-item">
 
                 <summary>
-                    <span class="value-title"><span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 20 6v5c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-3Z"></path><path d="m8.5 12 2.2 2.2 4.8-5"></path></svg></span><span>Tus datos y conocimiento bajo tu control</span></span>
+                    <span class="value-title"><span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 20 6v5c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-3Z"></path><path d="m8.5 12 2.2 2.2 4.8-5"></path></svg></span><span>Your data and knowledge under your control</span></span>
                     <span class="accordion-symbol" aria-hidden="true"></span>
                 </summary>
 
                 <div class="value-detail">
-                    Tu información estratégica permanece dentro de
-                    tu organización, sin compartir datos sensibles
-                    con servicios externos.
+                    Your strategic information stays within
+                    your organization, without sharing sensitive data
+                    with external services.
                 </div>
 
             </details>
@@ -408,13 +432,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <details class="value-item">
 
                 <summary>
-                    <span class="value-title"><span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><span>Sin cajas negras</span></span>
+                    <span class="value-title"><span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><span>No black boxes</span></span>
                     <span class="accordion-symbol" aria-hidden="true"></span>
                 </summary>
 
                 <div class="value-detail">
-                    Conoce y controla cómo se ejecutan los procesos,
-                    reglas y cálculos utilizados por el sistema.
+                    Understand and control how the system executes
+                    processes, rules and calculations.
                 </div>
 
             </details>
@@ -422,26 +446,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <details class="value-item">
 
                 <summary>
-                    <span class="value-title"><span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 5h6M9 3h6v4H9z"></path><path d="M17 5h2v16H5V5h2"></path><path d="m8 13 2 2 5-5M8 18h8"></path></svg></span><span>Procesos determinísticos y auditables</span></span>
+                    <span class="value-title"><span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 5h6M9 3h6v4H9z"></path><path d="M17 5h2v16H5V5h2"></path><path d="m8 13 2 2 5-5M8 18h8"></path></svg></span><span>Deterministic, auditable processes</span></span>
                     <span class="accordion-symbol" aria-hidden="true"></span>
                 </summary>
 
                 <div class="value-detail">
-                    Tu empresa define cómo calcular KPI, métricas
-                    y reglas de negocio, con resultados consistentes,
-                    trazables y auditables.
+                    Your company defines KPI calculations, metrics
+                    and business rules, producing consistent,
+                    traceable and auditable results.
                 </div>
 
             </details>
 
         </div>
 
-        <a class="primary-cta" href="simula-tu-caso.html">
-            Simula tu caso
+        <a class="primary-cta" href="simula-tu-caso-en.html">
+            Explore your use case
         </a>
 
         <p class="hero-intro" style="margin-top: 18px; margin-bottom: 0;">
-            Lleva la IA a tus datos. No tus datos a la IA.
+            Bring AI to your data. Not your data to AI.
         </p>
 
     </div>
@@ -459,16 +483,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="strategic-header centered">
 
         <p class="section-eyebrow">
-            ATRIBUTOS ESTRATÉGICOS
+            STRATEGIC CAPABILITIES
         </p>
 
         <h2>
-            Inteligencia empresarial con control total
+            Enterprise intelligence with full control
         </h2>
 
         <p class="section-lead">
-            Datos y conocimiento ingresan a MOINEM bajo reglas definidas
-            por la organización y se transforman en información para decidir.
+            Data and knowledge enter MOINEM under rules defined
+            by your organization and are transformed into decision-ready intelligence.
         </p>
 
     </div>
@@ -478,27 +502,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="flow-column flow-inputs">
 
             <p class="flow-column-title">
-                DATOS Y CONOCIMIENTO
+                DATA & KNOWLEDGE
             </p>
 
             <article class="flow-card">
-                <h3>Datos empresariales</h3>
-                <p>Bases de datos internas y sistemas transaccionales.</p>
+                <h3>Business data</h3>
+                <p>Internal databases and transactional systems.</p>
             </article>
 
             <article class="flow-card">
-                <h3>Conocimiento del negocio</h3>
-                <p>Definiciones, políticas, catálogos y criterios empresariales.</p>
+                <h3>Business knowledge</h3>
+                <p>Definitions, policies, catalogs and business criteria.</p>
             </article>
 
             <article class="flow-card">
-                <h3>Reglas de negocio</h3>
-                <p>Lógicas, validaciones y procesos definidos por la organización.</p>
+                <h3>Business rules</h3>
+                <p>Logic, validations and processes defined by your organization.</p>
             </article>
 
             <article class="flow-card">
-                <h3>Documentos y fuentes</h3>
-                <p>Informes, archivos y fuentes autorizadas.</p>
+                <h3>Documents and sources</h3>
+                <p>Reports, files and authorized sources.</p>
             </article>
 
         </div>
@@ -536,37 +560,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <strong>MOINEM</strong>
 
-                <span>Motor de Inteligencia<br>Empresarial</span>
+                <span>Enterprise Intelligence<br>Engine</span>
 
             </div>
         </div>
 
         <div class="flow-column flow-outputs">
 
-            <p class="flow-column-title">ANÁLISIS Y RESULTADOS</p>
+            <p class="flow-column-title">ANALYSIS & RESULTS</p>
 
-            <article class="flow-card"><h3>Análisis</h3><p>Análisis ad-hoc basados en metricas, reglas. y criterios definidos por cada area.</p></article>
-            <article class="flow-card"><h3>Dashboards</h3><p>Visualizaciones interactivas y personalizadas para explorar resultados.</p></article>
-            <article class="flow-card"><h3>KPI e Insights ejecutivos</h3><p>Indicadores, comparaciones y hallazgos clave para apoyar decisiones.</p></article>
-            <article class="flow-card"><h3>Alertas y oportunidades</h3><p>Detección desviaciones, outliers y oportunidades relevantes.</p></article>
+            <article class="flow-card"><h3>Analysis</h3><p>Ad-hoc analyses based on metrics, rules and criteria defined by each business area.</p></article>
+            <article class="flow-card"><h3>Dashboards</h3><p>Interactive, tailored visualizations to explore results.</p></article>
+            <article class="flow-card"><h3>Executive KPIs & Insights</h3><p>KPIs, comparisons and key findings to support decisions.</p></article>
+            <article class="flow-card"><h3>Alerts & opportunities</h3><p>Detection of deviations, outliers and relevant opportunities.</p></article>
 
         </div>
 
     </div>
 
-    <div class="control-carousel" aria-label="Atributos de control de MOINEM">
+    <div class="control-carousel" aria-label="Capabilities de control de MOINEM">
         <div class="control-track">
-            <article class="control-card control-governance"><span class="control-dot" aria-hidden="true"></span><div><h3>Gobernanza</h3><p>Políticas y criterios definidos por tu empresa.</p></div></article>
-            <article class="control-card control-security"><span class="control-dot" aria-hidden="true"></span><div><h3>Seguridad</h3><p>Protección y privacidad de los datos.</p></div></article>
-            <article class="control-card control-traceability"><span class="control-dot" aria-hidden="true"></span><div><h3>Trazabilidad</h3><p>Auditoría y seguimiento de cada proceso.</p></div></article>
-            <article class="control-card control-rules"><span class="control-dot" aria-hidden="true"></span><div><h3>Reglas determinísticas</h3><p>Cálculos y procesos bajo reglas de negocio definidas.</p></div></article>
-            <article class="control-card control-intelligence"><span class="control-dot" aria-hidden="true"></span><div><h3>Inteligencia empresarial</h3><p>Generación de insights comerciales, financieros y operacionales.</p></div></article>
+            <article class="control-card control-governance"><span class="control-dot" aria-hidden="true"></span><div><h3>Governance</h3><p>Policies and criteria defined by your company.</p></div></article>
+            <article class="control-card control-security"><span class="control-dot" aria-hidden="true"></span><div><h3>Security</h3><p>Data protection and privacy.</p></div></article>
+            <article class="control-card control-traceability"><span class="control-dot" aria-hidden="true"></span><div><h3>Traceability</h3><p>Auditability and tracking of every process.</p></div></article>
+            <article class="control-card control-rules"><span class="control-dot" aria-hidden="true"></span><div><h3>Deterministic rules</h3><p>Calculations and processes under defined business rules.</p></div></article>
+            <article class="control-card control-intelligence"><span class="control-dot" aria-hidden="true"></span><div><h3>Enterprise intelligence</h3><p>Generation of sales, financial and operational insights.</p></div></article>
             <div class="control-set-copy" aria-hidden="true">
-                <article class="control-card control-governance"><span class="control-dot" aria-hidden="true"></span><div><h3>Gobernanza</h3><p>Políticas y criterios definidos por tu empresa.</p></div></article>
-                <article class="control-card control-security"><span class="control-dot" aria-hidden="true"></span><div><h3>Seguridad</h3><p>Protección y privacidad de los datos.</p></div></article>
-                <article class="control-card control-traceability"><span class="control-dot" aria-hidden="true"></span><div><h3>Trazabilidad</h3><p>Auditoría y seguimiento de cada proceso.</p></div></article>
-                <article class="control-card control-rules"><span class="control-dot" aria-hidden="true"></span><div><h3>Reglas determinísticas</h3><p>Cálculos y procesos bajo reglas de negocio definidas.</p></div></article>
-                <article class="control-card control-intelligence"><span class="control-dot" aria-hidden="true"></span><div><h3>Inteligencia empresarial</h3><p>Generación de insights comerciales, financieros y operacionales.</p></div></article>
+                <article class="control-card control-governance"><span class="control-dot" aria-hidden="true"></span><div><h3>Governance</h3><p>Policies and criteria defined by your company.</p></div></article>
+                <article class="control-card control-security"><span class="control-dot" aria-hidden="true"></span><div><h3>Security</h3><p>Data protection and privacy.</p></div></article>
+                <article class="control-card control-traceability"><span class="control-dot" aria-hidden="true"></span><div><h3>Traceability</h3><p>Auditability and tracking of every process.</p></div></article>
+                <article class="control-card control-rules"><span class="control-dot" aria-hidden="true"></span><div><h3>Deterministic rules</h3><p>Calculations and processes under defined business rules.</p></div></article>
+                <article class="control-card control-intelligence"><span class="control-dot" aria-hidden="true"></span><div><h3>Enterprise intelligence</h3><p>Generation of sales, financial and operational insights.</p></div></article>
             </div>
         </div>
     </div>
@@ -581,11 +605,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="demo-video-title">
 
-            <p class="section-eyebrow">DEMOSTRACIÓN</p>
+            <p class="section-eyebrow">DEMO</p>
 
-            <h3>MOINEM EN ACCIÓN</h3>
+            <h3>MOINEM IN ACTION</h3>
 
-            <p>Preguntas estrategicas se convierten en analisis rápidos y estructurados para apoyar toma de decisiones.</p>
+            <p>Strategic questions become fast, structured analyses that support decision-making.</p>
 
         </div>
 
@@ -626,7 +650,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                         <div class="platform-question">
                             <span class="question-label">Business question</span>
-                            <p>Compara el precio promedio de Chile vs Brasil por trimestre.</p>
+                            <p>Compare the average price in Chile vs Brazil by quarter.</p>
                             <button class="platform-run-button" type="button">Run Analysis</button>
                         </div>
                         <div class="requirements-grid">
@@ -666,12 +690,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div><span class="platform-kicker">OUTPUTS</span><h4>Generated result</h4></div>
                             <span class="platform-badge">Ready</span>
                         </div>
-                        <div class="platform-video-frame">
-                            <video autoplay muted loop playsinline>
-                                <source src="videos/demo_moinem.mp4" type="video/mp4">
-                                Tu navegador no admite la reproducción de video.
-                            </video>
-                        </div>
+                        <div class="platform-video-frame"><div class="en-demo-animation" aria-label="MOINEM English demo">
+    <div class="en-scene en-s1"><span class="en-kicker">MOINEM</span><strong>Intelligence That<br>Drives Decisions</strong><small>Enterprise Intelligence Engine</small></div>
+    <div class="en-scene en-s2"><span class="en-kicker">THE CHALLENGE</span><strong>More data.<br>More reports.<br><em>More questions.</em></strong><small>Insight still takes too long to reach the decision-maker.</small></div>
+    <div class="en-scene en-s3"><span class="en-kicker">TRADITIONAL ANALYSIS</span><strong>Fragmented and slow</strong><div class="en-bullets"><span>Multiple files</span><span>Manual work</span><span>Delayed answers</span><span>Limited scalability</span></div></div>
+    <div class="en-scene en-s4"><span class="en-kicker">THE BRIDGE</span><strong><em>MOINEM bridges the gap</em><br>between data and decisions</strong><small>A bridge from questions to answers</small>
+        <svg class="en-bridge" viewBox="0 0 700 190" aria-hidden="true"><path d="M50 155 H650" class="deck"/><path d="M170 155 V55 M530 155 V55" class="tower"/><path d="M50 120 Q350 5 650 120" class="cable"/><path d="M95 103V155 M140 86V155 M215 54V155 M260 39V155 M305 30V155 M350 27V155 M395 30V155 M440 39V155 M485 54V155 M560 86V155 M605 103V155" class="hang"/><text x="10" y="176">DATA</text><text x="585" y="176">DECISIONS</text></svg>
+    </div>
+    <div class="en-scene en-s5"><span class="en-kicker">ASK MOINEM</span><strong>Ask business questions<br><em>in natural language</em></strong><div class="en-query">“What explains the sales gap vs budget?”</div><small>Get clear, structured answers.</small></div>
+    <div class="en-scene en-s6"><span class="en-kicker">GO DEEPER. FASTER.</span><strong>Turn business questions into analysis</strong><div class="en-stack"><span>Which products are driving margin decline?</span><span>How did volume evolve by market?</span><span>What changed versus last month?</span></div></div>
+    <div class="en-scene en-s7"><span class="en-kicker">FROM INSIGHT TO ACTION</span><strong>From questions <em>to answers</em><br>From answers <em>to action</em></strong></div>
+    <div class="en-scene en-s8"><span class="en-kicker">BUILT FOR CONTROL & TRUST</span><strong>MOINEM</strong><div class="en-bullets compact"><span>100% On-Premise</span><span>Your data stays under control</span><span>No black boxes</span><span>Traceability & governance</span></div><small>Turn your data into decisions.</small></div>
+</div></div>
                     </section>
 
                     <section class="platform-panel" id="panel-logs">
@@ -699,27 +729,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- =========================
-     CASOS DE USO
+     USE CASES
 ========================= -->
 
 <section id="casos-uso" class="content-section soft-section">
 
-    <p class="section-eyebrow">CASOS DE USO</p>
+    <p class="section-eyebrow">USE CASES</p>
 
-    <h2>Inteligencia aplicada a distintas áreas del negocio</h2>
+    <h2>Intelligence applied across business functions</h2>
 
     <p class="section-lead use-cases-lead">
-        Desde consultas ejecutivas hasta análisis más profundos,
-        MOINEM puede adaptarse a diferentes necesidades de gestión.
+        From executive questions to deeper analysis,
+            MOINEM adapts to different management needs.
     </p>
 
     <div class="use-cases-grid">
-        <article class="use-case-card"><h3>Comercial</h3><p>Analiza ventas, precios, volumen, mix, márgenes, clientes, productos y mercados.</p><small>Ejemplo: compara precio promedio y margen por mercado, producto y período.</small></article>
-        <article class="use-case-card"><h3>Finanzas y Control de Gestión</h3><p>Monitorea presupuesto, forecast, desviaciones, costos y rentabilidad.</p><small>Ejemplo: identifica las principales desviaciones versus presupuesto y sus fuentes.</small></article>
-        <article class="use-case-card"><h3>Operaciones</h3><p>Explora productividad, eficiencia, inventarios, capacidad y desempeño operacional.</p><small>Ejemplo: detecta unidades, períodos o procesos con desviaciones relevantes.</small></article>
-        <article class="use-case-card"><h3>Riesgo y Clientes</h3><p>Identifica patrones, señales de riesgo, comportamiento y oportunidades de retención.</p><small>Ejemplo: detecta clientes con señales tempranas de fuga o deterioro.</small></article>
-        <article class="use-case-card"><h3>Dirección y Gerencia</h3><p>Consolida indicadores y análisis ejecutivos para apoyar decisiones transversales.</p><small>Ejemplo: resume oportunidades, riesgos y desviaciones relevantes del negocio.</small></article>
-        <article class="use-case-card"><h3>Analítica Avanzada</h3><p>Incorpora modelos predictivos, segmentación, detección de anomalías y escenarios.</p><small>Ejemplo: estima probabilidades, tendencias o escenarios utilizando metodologías definidas.</small></article>
+        <article class="use-case-card"><h3>Sales</h3><p>Analyze sales, pricing, volume, mix, margins, customers, products and markets.</p><small>Example: compare average price and margin by market, product and period.</small></article>
+        <article class="use-case-card"><h3>Finance & Performance Management</h3><p>Monitor budget, forecast, variances, costs and profitability.</p><small>Example: identify the main variances versus budget and their drivers.</small></article>
+        <article class="use-case-card"><h3>Operations</h3><p>Explore productivity, efficiency, inventory, capacity and operational performance.</p><small>Example: detect units, periods or processes with material deviations.</small></article>
+        <article class="use-case-card"><h3>Risk & Customers</h3><p>Identify patterns, risk signals, behavior and retention opportunities.</p><small>Example: detect customers showing early signs of churn or deterioration.</small></article>
+        <article class="use-case-card"><h3>Executive Management</h3><p>Consolidate KPIs and executive analysis to support cross-functional decisions.</p><small>Example: summarize relevant business opportunities, risks and deviations.</small></article>
+        <article class="use-case-card"><h3>Advanced Analytics</h3><p>Add predictive models, segmentation, anomaly detection and scenario analysis.</p><small>Example: estimate probabilities, trends or scenarios using defined methodologies.</small></article>
     </div>
 
 </section>
@@ -732,19 +762,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <p class="section-eyebrow">MOINEM INSIGHTS</p>
 
-    <h2>IA empresarial explicada desde el negocio</h2>
+    <h2>Business AI explained from a business perspective</h2>
 
     <div class="insights-grid">
-        <article><h3>¿Cómo implementar IA en una empresa?</h3><a href="#">Leer insight</a></article>
-        <article><h3>¿Cómo automatizar el análisis comercial?</h3><a href="#">Leer insight</a></article>
-        <article><h3>¿Cómo utilizar IA sin exponer datos sensibles?</h3><a href="#">Leer insight</a></article>
-        <article><h3>¿Los dashboards tradicionales siguen siendo suficientes?</h3><a href="#">Leer insight</a></article>
+        <article><h3>How can AI be implemented in a company?</h3><a href="#">Read insight</a></article>
+        <article><h3>How can sales analysis be automated?</h3><a href="#">Read insight</a></article>
+        <article><h3>How can AI be used without exposing sensitive data?</h3><a href="#">Read insight</a></article>
+        <article><h3>Are traditional dashboards still enough?</h3><a href="#">Read insight</a></article>
     </div>
 
 </section>
 
 <!-- =========================
-     CONTACTO
+     CONTACT
 ========================= -->
 
 <section id="contacto" class="contact-section">
@@ -754,12 +784,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <img
                 class="contact-team-image"
                 src="https://images.pexels.com/photos/7163395/pexels-photo-7163395.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt="Equipo profesional colaborando con laptops y gráficos en una oficina moderna"
+                alt="Professional team collaborating with laptops and business charts in a modern office"
                 loading="lazy"
             >
         </div>
 
-        <p class="contact-photo-caption">Tecnología al servicio de las personas y del negocio.</p>
+        <p class="contact-photo-caption">Technology serving people and business.</p>
 
         <div class="contact-brand-line">
             <img class="contact-logo" src="imagenes/logo/moinem_logo_light3.jpg" alt="MOINEM">
@@ -771,19 +801,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="contact-copy">
-        <p class="section-eyebrow">CONTACTO</p>
+        <p class="section-eyebrow">CONTACT</p>
 
-        <h2>Conversemos sobre tu organización</h2>
+        <h2>Let’s talk about your organization</h2>
 
         <p>
-            Si quieres conocer MOINEM, revisar un caso de uso
-            o explorar cómo podría incorporarse a tu empresa,
-            ponte en contacto con nosotros.
+            If you want to learn more about MOINEM, review a use case
+            or explore how it could fit into your organization,
+            get in touch with us.
         </p>
 
         <div class="contact-actions">
-            <a class="primary-cta" href="simula-tu-caso.html">Simula tu caso</a>
-            <a class="secondary-cta" href="mailto:contacto@moinem.cl">Contacto</a>
+            <a class="primary-cta" href="simula-tu-caso-en.html">Explore your use case</a>
+            <a class="secondary-cta" href="mailto:contacto@moinem.cl">Contact</a>
             <a class="secondary-cta" href="https://wa.me/56989633544" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
     </div>
@@ -796,12 +826,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="copyright">© 2026 MOINEM</p>
 </footer>
 
-<div class="moinem-whatsapp" aria-label="Contacto por WhatsApp">
+<div class="moinem-whatsapp" aria-label="Contact por WhatsApp">
     <div class="moinem-whatsapp-message" id="moinem-whatsapp-message">
-        Solicita MOINEM para tu infraestructura. Conversemos sobre tu implementación.
-        <button class="moinem-whatsapp-close" type="button" aria-label="Cerrar mensaje" onclick="this.parentElement.hidden = true">×</button>
+        Deploy MOINEM in your infrastructure. Let’s discuss your implementation.
+        <button class="moinem-whatsapp-close" type="button" aria-label="Close message" onclick="this.parentElement.hidden = true">×</button>
     </div>
-    <a class="moinem-whatsapp-link" href="https://wa.me/56989633544?text=Hola%2C%20quiero%20solicitar%20MOINEM%20para%20mi%20infraestructura." target="_blank" rel="noopener noreferrer" aria-label="Escribir a MOINEM por WhatsApp" title="Escribir por WhatsApp">
+    <a class="moinem-whatsapp-link" href="https://wa.me/56989633544?text=Hello%2C%20I%20would%20like%20to%20deploy%20MOINEM%20in%20my%20infrastructure." target="_blank" rel="noopener noreferrer" aria-label="Message MOINEM on WhatsApp" title="Message us on WhatsApp">
         <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 2.5A13.4 13.4 0 0 0 4.5 22.8L2.7 29.5l6.9-1.8A13.5 13.5 0 1 0 16 2.5Zm0 24.4a10.9 10.9 0 0 1-5.6-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4a11 11 0 1 1 9.3 5Zm6-8.2c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.3-.7.1a8.9 8.9 0 0 1-4.4-3.8c-.3-.5.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.8 1.2 3.1 1.4 3.3a12 12 0 0 0 4.6 4.9 4.9 0 0 0 5.5.4c.7-.6 1.1-1.5 1.2-2.1 0-.3-.1-.4-.4-.5Z"/></svg>
     </a>
 </div>

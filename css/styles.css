@@ -1452,7 +1452,7 @@ body::before {
     margin-top: 36px;
 }
 
-.insights-grid article {
+.insight-card {
     background-color: white;
 
     border: 1px solid #dbeafe;
@@ -1471,7 +1471,7 @@ body::before {
     color: #1e3a8a;
 }
 
-.insights-grid a {
+.insight-card {
     text-decoration: none;
 
     color: #2563eb;
@@ -2545,7 +2545,7 @@ footer {
    INSIGHTS: PALETA PASTEL INVERSA
 ========================= */
 
-.insights-grid article {
+.insight-card {
     --insight-bg: #ecfdf5;
     --insight-border: #b7ead4;
     --insight-title: #087a55;
@@ -2558,7 +2558,7 @@ footer {
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.insights-grid article::before {
+.insight-card::before {
     content: "";
     position: absolute;
     inset: 0 0 auto;
@@ -2567,14 +2567,14 @@ footer {
     opacity: 0.72;
 }
 
-.insights-grid article:nth-child(2) {
+.insight-card:nth-child(2) {
     --insight-bg: #f5f1ff;
     --insight-border: #ddd0fe;
     --insight-title: #6d3fc0;
     --insight-glow: rgba(109, 63, 192, 0.10);
 }
 
-.insights-grid article:nth-child(3) {
+.insight-card:nth-child(3) {
     --insight-bg: #eef6ff;
     --insight-border: #bfdbfe;
     --insight-title: #1d4ed8;
@@ -2582,11 +2582,11 @@ footer {
 }
 
 .insights-grid h3,
-.insights-grid a {
+.insight-card {
     color: var(--insight-title);
 }
 
-.insights-grid article:hover {
+.insight-card:hover {
     transform: translateY(-3px);
     border-color: var(--insight-title);
     box-shadow: 0 14px 32px var(--insight-glow);
@@ -2684,4 +2684,11 @@ footer {
     .shooting-stars {
         display: none;
     }
+}
+
+
+/* Insight cards: full-card interaction */
+.insight-card {
+    display: block;
+    cursor: pointer;
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://moinem.cl/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://moinem.cl/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://moinem.cl/index-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moinem.cl/" />
+  </url>
+  <url>
+    <loc>https://moinem.cl/index-en.html</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://moinem.cl/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://moinem.cl/index-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moinem.cl/" />
+  </url>
+  <url>
+    <loc>https://moinem.cl/simula-tu-caso.html</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://moinem.cl/simula-tu-caso.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://moinem.cl/simula-tu-caso-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moinem.cl/simula-tu-caso.html" />
+  </url>
+  <url>
+    <loc>https://moinem.cl/simula-tu-caso-en.html</loc>
+    <lastmod>2026-09-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://moinem.cl/simula-tu-caso.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://moinem.cl/simula-tu-caso-en.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moinem.cl/simula-tu-caso.html" />
+  </url>
+</urlset>

@@ -269,6 +269,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .moinem-whatsapp-link { flex-basis: 52px; width: 52px; height: 52px; }
         }
 </style>
+
+<style id="moinem-en-demo-preview">
+.en-demo-animation{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:18px;background:#f8fbff;color:#12274a;font-family:Arial,Helvetica,sans-serif;box-shadow:inset 0 0 0 1px rgba(59,130,246,.14)}
+.en-demo-animation:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.06) 1px,transparent 1px);background-size:54px 54px}
+.en-scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7% 8%;opacity:0;animation:enScene 16s infinite}
+.en-scene:nth-child(1){animation-delay:0s}.en-scene:nth-child(2){animation-delay:2s}.en-scene:nth-child(3){animation-delay:4s}.en-scene:nth-child(4){animation-delay:6s}.en-scene:nth-child(5){animation-delay:8s}.en-scene:nth-child(6){animation-delay:10s}.en-scene:nth-child(7){animation-delay:12s}.en-scene:nth-child(8){animation-delay:14s}
+@keyframes enScene{0%,10.5%{opacity:1;transform:scale(1)}12.5%,100%{opacity:0;transform:scale(1.012)}}
+.en-kicker{font-size:clamp(10px,1.25vw,18px);font-weight:800;letter-spacing:.16em;color:#2563eb;margin-bottom:1.1em}
+.en-scene strong{font-size:clamp(18px,3.3vw,48px);line-height:1.08;color:#12274a}
+.en-scene strong em{font-style:normal;color:#2563eb}.en-scene small{font-size:clamp(10px,1.35vw,20px);color:#475569;margin-top:1.2em}
+.en-bullets{display:grid;grid-template-columns:1fr 1fr;gap:.55em 1.1em;margin-top:1.15em;font-size:clamp(10px,1.25vw,19px);color:#334155}.en-bullets span:before{content:"•";color:#0ea5e9;font-weight:900;margin-right:.45em}
+.en-bullets.compact{margin-top:.75em}.en-query{margin-top:1.25em;padding:.7em 1.1em;border:1px solid #bfdbfe;border-radius:14px;background:white;font-size:clamp(10px,1.35vw,20px);color:#1e293b}
+.en-stack{display:grid;gap:.5em;margin-top:1.1em;width:min(90%,760px)}.en-stack span{padding:.55em .8em;border:1px solid #dbeafe;border-radius:12px;background:white;font-size:clamp(9px,1.15vw,17px);color:#334155}
+.en-bridge{width:min(88%,760px);height:auto;margin-top:1.1em}.en-bridge path{fill:none;stroke:#2563eb;stroke-linecap:round}.en-bridge .deck,.en-bridge .tower{stroke-width:7}.en-bridge .cable{stroke-width:4}.en-bridge .hang{stroke-width:2}.en-bridge text{font:700 19px Arial,Helvetica,sans-serif;fill:#2563eb}
+.hero-video-crop .en-demo-animation{height:100%;min-height:100%}.platform-video-frame .en-demo-animation{border-radius:10px}
+@media(max-width:700px){.en-demo-animation{border-radius:12px}.en-scene{padding:6%}.en-bullets{gap:.35em .6em}.en-bridge text{font-size:16px}}
+</style>
+
 </head>
 
 <body>
@@ -344,12 +362,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             DRIVES DECISIONS
         </p>
 
-        <div class="hero-video-crop">
-            <video class="hero-demo-video" autoplay muted loop playsinline preload="metadata" aria-label="MOINEM in action">
-                <source src="videos/demo_moinem.mp4" type="video/mp4">
-                Your browser does not support video playback.
-            </video>
-        </div>
+        <div class="hero-video-crop"><div class="en-demo-animation" aria-label="MOINEM English demo">
+    <div class="en-scene en-s1"><span class="en-kicker">MOINEM</span><strong>Intelligence That<br>Drives Decisions</strong><small>Enterprise Intelligence Engine</small></div>
+    <div class="en-scene en-s2"><span class="en-kicker">THE CHALLENGE</span><strong>More data.<br>More reports.<br><em>More questions.</em></strong><small>Insight still takes too long to reach the decision-maker.</small></div>
+    <div class="en-scene en-s3"><span class="en-kicker">TRADITIONAL ANALYSIS</span><strong>Fragmented and slow</strong><div class="en-bullets"><span>Multiple files</span><span>Manual work</span><span>Delayed answers</span><span>Limited scalability</span></div></div>
+    <div class="en-scene en-s4"><span class="en-kicker">THE BRIDGE</span><strong><em>MOINEM bridges the gap</em><br>between data and decisions</strong><small>A bridge from questions to answers</small>
+        <svg class="en-bridge" viewBox="0 0 700 190" aria-hidden="true"><path d="M50 155 H650" class="deck"/><path d="M170 155 V55 M530 155 V55" class="tower"/><path d="M50 120 Q350 5 650 120" class="cable"/><path d="M95 103V155 M140 86V155 M215 54V155 M260 39V155 M305 30V155 M350 27V155 M395 30V155 M440 39V155 M485 54V155 M560 86V155 M605 103V155" class="hang"/><text x="10" y="176">DATA</text><text x="585" y="176">DECISIONS</text></svg>
+    </div>
+    <div class="en-scene en-s5"><span class="en-kicker">ASK MOINEM</span><strong>Ask business questions<br><em>in natural language</em></strong><div class="en-query">“What explains the sales gap vs budget?”</div><small>Get clear, structured answers.</small></div>
+    <div class="en-scene en-s6"><span class="en-kicker">GO DEEPER. FASTER.</span><strong>Turn business questions into analysis</strong><div class="en-stack"><span>Which products are driving margin decline?</span><span>How did volume evolve by market?</span><span>What changed versus last month?</span></div></div>
+    <div class="en-scene en-s7"><span class="en-kicker">FROM INSIGHT TO ACTION</span><strong>From questions <em>to answers</em><br>From answers <em>to action</em></strong></div>
+    <div class="en-scene en-s8"><span class="en-kicker">BUILT FOR CONTROL & TRUST</span><strong>MOINEM</strong><div class="en-bullets compact"><span>100% On-Premise</span><span>Your data stays under control</span><span>No black boxes</span><span>Traceability & governance</span></div><small>Turn your data into decisions.</small></div>
+</div></div>
 
 
         <a class="pyme-stamp" href="simula-tu-caso-en.html" aria-label="Do you run an SME? Try MOINEM free. Explore your use case and write I run an SME.">
@@ -666,12 +690,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div><span class="platform-kicker">OUTPUTS</span><h4>Generated result</h4></div>
                             <span class="platform-badge">Ready</span>
                         </div>
-                        <div class="platform-video-frame">
-                            <video autoplay muted loop playsinline>
-                                <source src="videos/demo_moinem.mp4" type="video/mp4">
-                                Your browser does not support video playback.
-                            </video>
-                        </div>
+                        <div class="platform-video-frame"><div class="en-demo-animation" aria-label="MOINEM English demo">
+    <div class="en-scene en-s1"><span class="en-kicker">MOINEM</span><strong>Intelligence That<br>Drives Decisions</strong><small>Enterprise Intelligence Engine</small></div>
+    <div class="en-scene en-s2"><span class="en-kicker">THE CHALLENGE</span><strong>More data.<br>More reports.<br><em>More questions.</em></strong><small>Insight still takes too long to reach the decision-maker.</small></div>
+    <div class="en-scene en-s3"><span class="en-kicker">TRADITIONAL ANALYSIS</span><strong>Fragmented and slow</strong><div class="en-bullets"><span>Multiple files</span><span>Manual work</span><span>Delayed answers</span><span>Limited scalability</span></div></div>
+    <div class="en-scene en-s4"><span class="en-kicker">THE BRIDGE</span><strong><em>MOINEM bridges the gap</em><br>between data and decisions</strong><small>A bridge from questions to answers</small>
+        <svg class="en-bridge" viewBox="0 0 700 190" aria-hidden="true"><path d="M50 155 H650" class="deck"/><path d="M170 155 V55 M530 155 V55" class="tower"/><path d="M50 120 Q350 5 650 120" class="cable"/><path d="M95 103V155 M140 86V155 M215 54V155 M260 39V155 M305 30V155 M350 27V155 M395 30V155 M440 39V155 M485 54V155 M560 86V155 M605 103V155" class="hang"/><text x="10" y="176">DATA</text><text x="585" y="176">DECISIONS</text></svg>
+    </div>
+    <div class="en-scene en-s5"><span class="en-kicker">ASK MOINEM</span><strong>Ask business questions<br><em>in natural language</em></strong><div class="en-query">“What explains the sales gap vs budget?”</div><small>Get clear, structured answers.</small></div>
+    <div class="en-scene en-s6"><span class="en-kicker">GO DEEPER. FASTER.</span><strong>Turn business questions into analysis</strong><div class="en-stack"><span>Which products are driving margin decline?</span><span>How did volume evolve by market?</span><span>What changed versus last month?</span></div></div>
+    <div class="en-scene en-s7"><span class="en-kicker">FROM INSIGHT TO ACTION</span><strong>From questions <em>to answers</em><br>From answers <em>to action</em></strong></div>
+    <div class="en-scene en-s8"><span class="en-kicker">BUILT FOR CONTROL & TRUST</span><strong>MOINEM</strong><div class="en-bullets compact"><span>100% On-Premise</span><span>Your data stays under control</span><span>No black boxes</span><span>Traceability & governance</span></div><small>Turn your data into decisions.</small></div>
+</div></div>
                     </section>
 
                     <section class="platform-panel" id="panel-logs">

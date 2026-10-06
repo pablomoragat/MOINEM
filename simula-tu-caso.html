@@ -385,6 +385,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           throw new Error(data.message || 'No fue posible enviar el caso');
         }
 
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'lead_form_success' });
+
         status.className = 'status show success';
         status.textContent = 'Caso enviado correctamente. Te contactaremos para revisar la información.';
         sendCase.textContent = 'CASO ENVIADO';

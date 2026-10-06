@@ -385,6 +385,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           throw new Error(data.message || 'Unable to send the use case');
         }
 
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'lead_form_success' });
+
         status.className = 'status show success';
         status.textContent = 'Use case sent successfully. We will contact you to review the information.';
         sendCase.textContent = 'CASE SENT';

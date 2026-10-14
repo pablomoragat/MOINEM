@@ -2723,3 +2723,68 @@ footer {
 @media (max-width: 620px) {
     .main-nav { flex-wrap: wrap; justify-content: center; gap: 9px 15px; }
 }
+
+
+/* MOINEM | Executive redesign 2026-10-14 | Backup: respaldo/pre-rediseno-2026-10-14 */
+.hero{min-height:600px;padding-top:48px;padding-bottom:64px}
+.hero-brand{min-height:410px}
+.hero-content{padding-left:7%}
+.hero-content h2{max-width:720px;margin-bottom:18px;font-size:clamp(34px,3.5vw,52px);line-height:1.12}
+.hero-value-kicker{margin:0 0 14px;color:#1d4ed8;font-size:12px;font-weight:800;letter-spacing:1.7px}
+.hero-content>.hero-intro{margin:0;max-width:640px;font-size:clamp(16px,1.4vw,18px);line-height:1.65;color:#475569}
+.hero-benefit-list{display:flex;flex-wrap:wrap;gap:9px;margin:25px 0 26px}
+.hero-benefit-list span{padding:8px 12px;border:1px solid #dbeafe;border-radius:999px;background:#eff6ff;color:#1e40af;font-size:12px;font-weight:700}
+.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:13px}
+.hero-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:11px 21px;border-radius:9px;font-size:14px;font-weight:700;text-decoration:none}
+.hero-actions .secondary-cta{color:#1d4ed8;border:1px solid #bfdbfe;background:#fff;box-shadow:none}
+.hero-actions .secondary-cta:hover{background:#eff6ff}
+.hero-tagline{margin:22px 0 0;color:#64748b;font-size:13px;font-weight:600}
+.demo-section{width:100%;overflow:clip;scroll-margin-top:92px}
+.demo-section .strategic-demo{margin:0;width:100%;max-width:100%;border-radius:0}
+#atributos{padding-top:80px;scroll-margin-top:92px}
+#atributos .strategic-header{margin-bottom:30px}
+.benefits-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1180px;margin:0 auto 26px}
+.benefit-card{padding:26px;border:1px solid #dbeafe;background:#fff;border-radius:17px;box-shadow:0 8px 25px rgba(15,23,42,.035)}
+.benefit-number{color:#60a5fa;font-size:13px;font-weight:800}
+.benefit-card h3{margin:8px 0;font-size:20px;line-height:1.25;color:#163f7a}
+.benefit-card p{margin:0;color:#526176;line-height:1.55;font-size:14px}
+.technical-details{max-width:1180px;margin:0 auto;border:1px solid #dbeafe;border-radius:14px;background:#eff6ff}
+.technical-details summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 23px;cursor:pointer;color:#1d4ed8;font-weight:700;list-style:none}
+.technical-details summary::-webkit-details-marker{display:none}
+.technical-details summary span{transition:transform .18s ease}
+.technical-details[open] summary span{transform:rotate(180deg)}
+.technical-details .strategic-flow{margin:0 auto;padding:25px 18px 35px}
+.technical-link{text-align:center;margin:17px auto 0;font-size:14px}
+.technical-link a{color:#1d4ed8;font-weight:700;text-decoration:none}
+.technical-link a:hover{text-decoration:underline}
+.memory-section{padding-top:85px;padding-bottom:85px}
+.memory-lead{margin-top:16px}
+.memory-pillars{margin:22px 0}
+#casos-uso{scroll-margin-top:92px}
+.use-cases-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:30px}
+.use-case-card{min-height:210px;padding:22px}
+.use-case-card h3{font-size:18px;line-height:1.3}
+.use-case-card p{font-size:14px;line-height:1.5}
+.use-case-card small{font-size:12px;line-height:1.5}
+.main-nav{gap:clamp(13px,1.5vw,24px);margin-right:22px}
+.mobile-menu{display:none;position:relative}
+.mobile-menu summary{list-style:none;cursor:pointer;color:#1e40af;border:1px solid #bfdbfe;border-radius:9px;padding:8px 13px;font-size:14px;font-weight:700}
+.mobile-menu summary::-webkit-details-marker{display:none}
+.mobile-menu nav{display:flex;flex-direction:column;position:absolute;right:0;top:calc(100% + 11px);min-width:190px;background:#fff;border:1px solid #dbeafe;border-radius:12px;box-shadow:0 14px 34px rgba(15,23,42,.14);padding:8px;z-index:1100}
+.mobile-menu nav a{display:block;padding:10px 12px;color:#334155;text-decoration:none;font-size:14px;border-radius:7px}
+.mobile-menu nav a:hover,.mobile-menu nav a:focus-visible{background:#eff6ff;color:#1d4ed8}
+@media(max-width:1180px){.use-cases-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:950px){
+ .hero-content{padding-left:0}.site-header{flex-wrap:nowrap;gap:16px}
+ .main-nav{display:none}.mobile-menu{display:block;margin-left:auto}.language-selector{margin-left:0}
+ .benefits-overview{grid-template-columns:1fr;max-width:660px}.technical-details{max-width:660px}
+}
+@media(max-width:620px){
+ .hero{padding:26px 6% 48px}.hero-brand{min-height:auto;padding:8px 0 25px}
+ .hero-content{padding:30px 0 0}.hero-content h2{font-size:clamp(31px,8vw,40px)}
+ .hero-benefit-list{margin:19px 0 22px}.hero-actions{gap:9px}
+ .hero-actions a{padding:10px 15px;font-size:13px}
+ .benefit-card{padding:20px}.demo-section .strategic-demo{padding:42px 5% 58px}
+ .use-cases-grid{grid-template-columns:1fr}.use-case-card{min-height:0}
+ .memory-section{padding:62px 6%}
+}
